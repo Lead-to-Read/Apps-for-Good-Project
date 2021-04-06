@@ -29,4 +29,32 @@ public class Book {
         year = 2000;
         ratingsCount = 0;
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthors() {
+        return authors;
+    }
+
+    public int getAvgRating() {
+        return avgRating;
+    }
+
+    public String getLanguage() {
+        return languageCode;
+    }
+
+    public int getNumPages() {
+        return numPages;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public int getRatingsCount() {
+        return ratingsCount;
+    }
 }
