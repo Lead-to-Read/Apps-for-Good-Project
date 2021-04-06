@@ -23,5 +23,4 @@ public class initialSurvey extends AppCompatActivity {
         editText.setAdapter(adapter);
         editText.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
     }
-
 }
