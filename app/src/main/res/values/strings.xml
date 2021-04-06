@@ -4,7 +4,5 @@
     <string name="langQText">What language should the book be written in?</string>
 
     //In dataset, "English" would select eng, en-GB, en-US
-    <string name="langEnglishOption">English</string>
-    <string name="langFrenchOption">French</string>
-    <string name="langSpanishOption">Spanish</string>
+    <string name="langOptionsText">Select a language.</string>
 </resources>

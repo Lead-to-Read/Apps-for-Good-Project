@@ -7,50 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".initialSurvey">
 
-    <TextView
-        android:id="@+id/langQuestion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/langQText"
-        android:textSize="18sp" />
+    <LinearLayout
+        android:id="@+id/linearLayoutLangQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <CheckBox
-        android:id="@+id/checklistEnglishOption"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="300dp"
-        android:text="@string/langEnglishOption"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/langQuestion" />
+        <TextView
+            android:id="@+id/langQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/langQText"
+            android:textSize="24sp" />
 
-    <CheckBox
-        android:id="@+id/checklistFrenchOption"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="300dp"
-        android:text="@string/langFrenchOption"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checklistEnglishOption" />
+        <MultiAutoCompleteTextView
+            android:id="@+id/langAutoComplete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:completionThreshold="0"
+            android:hint="@string/langOptionsText"
+            android:textSize="20sp" />
+    </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/checklistSpanishOption"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="300dp"
-        android:text="@string/langSpanishOption"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checklistFrenchOption" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
