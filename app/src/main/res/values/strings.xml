@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Apps for Good</string>
+    <string name="homePageText">Lead to Read</string>
+    <string name="langQText">What language should the book be written in?</string>
+
+    //In dataset, "English" would select eng, en-GB, en-US
+    <string name="langEnglishOption">English</string>
+    <string name="langFrenchOption">French</string>
+    <string name="langSpanishOption">Spanish</string>
 </resources>
