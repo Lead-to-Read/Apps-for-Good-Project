@@ -2,7 +2,23 @@
     <string name="app_name">Apps for Good</string>
     <string name="homePageText">Lead to Read</string>
     <string name="langQText">What language should the book be written in?</string>
+    <string name="authorQText">Who is your favorite author?</string>
+    <string name="lengthQText">What book length do you prefer?</string>
+    <string name="dateQText">What publication time period do you prefer?</string>
+
+    <string name="authorRankingText">On a scale of 0 (not at all) to 10 (essential), how much does author impact your book preferences?</string>
+    <string name="lengthRankingText">On a scale of 0 (not at all) to 10 (essential), how much does length impact your book preferences?</string>
+    <string name="dateRankingText">On a scale of 0 (not at all) to 10 (essential), how much does publication year impact your book preferences?</string>
+    <string name="avgRatingRankingText">On a scale of 0 (not at all) to 10 (essential), how much does average rating impact your book preferences?</string>
+
 
     //In dataset, "English" would select eng, en-GB, en-US
     <string name="langOptionsText">Select a language.</string>
+    <string name="authorHintText">Type in your favorite author.</string>
+    <string name="shortLengthOptionText">Short: Less Than 200 Pages</string>
+    <string name="mediumLengthOptionText">Medium: 200 to 500 Pages</string>
+    <string name="longLengthOptionText">Long: Over 500 Pages</string>
+    <string name="late1900sOptionText">Late 1900s: 1950-2000</string>
+    <string name="modern2000sOptionText">2000s</string>
+
 </resources>
