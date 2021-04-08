@@ -4,20 +4,20 @@ public class Book {
 
     private String title;
     private String authors;
-    private int avgRating;
+    private double avgRating;
     private String languageCode;
-    private int numPages;
-    private int year;
-    private int ratingsCount;
+    private double numPages;
+    private double ratingsCount;
+    private double year;
 
-    public Book(String initTitle, String initAuthors, int initAvgRating, String initLanguageCode, int initNumPages, int initYear, int initRatingsCount) {
+    public Book(String initTitle, String initAuthors, double initAvgRating, String initLanguageCode, double initNumPages, double initRatingsCount, double initYear,) {
         title = initTitle;
         authors = initAuthors;
         avgRating = initAvgRating;
         languageCode = initLanguageCode;
         numPages = initNumPages;
-        year = initYear;
         ratingsCount = initRatingsCount;
+        year = initYear;
     }
 
     public Book() {
@@ -26,8 +26,8 @@ public class Book {
         avgRating = 0;
         languageCode = "eng";
         numPages = 0;
-        year = 2000;
         ratingsCount = 0;
+        year = 2000;
     }
 
     public String getTitle() {
@@ -38,7 +38,7 @@ public class Book {
         return authors;
     }
 
-    public int getAvgRating() {
+    public double getAvgRating() {
         return avgRating;
     }
 
@@ -46,15 +46,16 @@ public class Book {
         return languageCode;
     }
 
-    public int getNumPages() {
+    public double getNumPages() {
         return numPages;
     }
 
-    public int getYear() {
+    public double getRatingsCount() {
+        return ratingsCount;
+    }
+
+    public double getYear() {
         return year;
     }
 
-    public int getRatingsCount() {
-        return ratingsCount;
-    }
 }
