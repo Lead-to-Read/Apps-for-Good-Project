@@ -23,6 +23,11 @@ public class MainActivity extends AppCompatActivity {
         readBookData();
     }
 
+    private int fixYear(String start) {
+        int endMonth = start.indexOf("/");
+        String middle = start.substring(endMonth + 1);
+    }
+
     private void readBookData() {
         InputStream stream = getResources().openRawResource(R.raw.books);
         BufferedReader provider = new BufferedReader(new InputStreamReader(stream));
