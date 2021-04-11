@@ -9,8 +9,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    ArrayList<Book> books = new ArrayList<Book>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +47,13 @@ public class MainActivity extends AppCompatActivity {
                 String[] attributes = entry.split(",");
                 Log.v("Reading", attributes[1] + " " + attributes[2]);
                 Book current = new Book(attributes[1], attributes[2], Double.parseDouble(attributes[3]), attributes[6], Integer.parseInt(attributes[7]), Integer.parseInt(attributes[8]), fixYear(attributes[10]));
+                books.add(current);
             }
 
         }
         catch(IOException exception) {
             Log.wtf("Reading", "Error while reading data - line " + entry);
+
         }
     }
 }
