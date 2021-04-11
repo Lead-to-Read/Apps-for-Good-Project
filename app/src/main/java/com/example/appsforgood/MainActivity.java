@@ -23,6 +23,11 @@ public class MainActivity extends AppCompatActivity {
         readBookData();
     }
 
+    private int fixYear(String start) {
+        int endMonth = start.indexOf("/");
+        String middle = start.substring(endMonth + 1);
+    }
+
     private void readBookData() {
         InputStream stream = getResources().openRawResource(R.raw.books);
         BufferedReader provider = new BufferedReader(new InputStreamReader(stream));
@@ -31,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             while ((entry = provider.readLine()) != null) {
                 // Split by ',' (CSV file)
                 String[] attributes = entry.split(",");
+                Book current = new Book(attributes[1], attributes[2], attributes[3], attributes[6], attributes[7], attributes[8], attributes[10]);
             }
 
         }
