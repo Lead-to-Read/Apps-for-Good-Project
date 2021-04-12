@@ -21,6 +21,8 @@
     <string name="late1900sOptionText">Late 1900s: 1950-2000</string>
     <string name="modern2000sOptionText">2000s</string>
 
+    <string name="beginClick">Press to Get Book Suggestions</string>
+
     <string name="bookSuggestionsTitleText">Suggested Books:</string>
 
 </resources>

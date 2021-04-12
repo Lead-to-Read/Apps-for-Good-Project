@@ -19,4 +19,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/beginButton"
+        android:layout_width="378dp"
+        android:layout_height="59dp"
+        android:text="@string/beginClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homePageText" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
