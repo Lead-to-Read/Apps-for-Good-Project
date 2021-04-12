@@ -2,8 +2,10 @@ package com.example.appsforgood;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -55,5 +57,10 @@ public class MainActivity extends AppCompatActivity {
             Log.wtf("Reading", "Error while reading data - line " + entry);
 
         }
+    }
+
+    public void performStartSuggestions(View v) {
+        Intent start = new Intent(this, SuggestionActivity.class);
+        startActivity(start);
     }
 }
