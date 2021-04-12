@@ -23,7 +23,7 @@
         android:id="@+id/beginButton"
         android:layout_width="378dp"
         android:layout_height="59dp"
-        android:text="@string/beginClick"
+        android:text="@string/beginClickButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/homePageText" />
