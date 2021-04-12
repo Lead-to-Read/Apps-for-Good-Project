@@ -27,4 +27,6 @@
 
     <string name="bookSuggestionsTitleText">Suggested Books:</string>
 
+    <string name="feedbackPromptingText">Please do not hesitate to contact us by email (ENTER EMAIL ADDRESS). Or, feel free to share your concerns, suggestions, and feedback through the anonymous Google Form below.</string>
+    <string name="feedbackPageTitleText">Feedback</string>
 </resources>
