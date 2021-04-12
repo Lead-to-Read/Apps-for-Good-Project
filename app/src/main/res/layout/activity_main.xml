@@ -7,6 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/appLogoImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/logoContentDescriptionText"
+        app:layout_constraintBottom_toTopOf="@+id/homePageText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
     <TextView
         android:id="@+id/homePageText"
         android:layout_width="wrap_content"
@@ -24,8 +38,21 @@
         android:layout_width="378dp"
         android:layout_height="59dp"
         android:text="@string/beginClickButton"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/homePageText" />
+
+    <Button
+        android:id="@+id/feedbackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/feedbackText"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beginButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
