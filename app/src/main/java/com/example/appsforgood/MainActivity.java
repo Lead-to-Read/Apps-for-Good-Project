@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -63,5 +64,12 @@ public class MainActivity extends AppCompatActivity {
     public void performStartSuggestions(View v) {
         Intent start = new Intent(this, SuggestionActivity.class);
         startActivity(start);
+    }
+
+    Button beginButton = (Button)findViewById(R.id.beginButton);
+
+    public void performBeginButton (View v) {
+        Intent intent = new Intent (this, initialSurvey.class);
+        startActivity(intent);
     }
 }
