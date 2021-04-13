@@ -7,11 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".initialSurvey">
 
+    <TextView
+        android:id="@+id/initialSurveyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/initialSurveyTitleText"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/linearLayoutQuestions"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/langQuestion"
@@ -19,7 +33,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="10sp"
             android:text="@string/langQText"
-            android:textSize="13sp" />
+            android:textSize="15sp" />
 
         <MultiAutoCompleteTextView
             android:id="@+id/langAutoComplete"
@@ -27,7 +41,7 @@
             android:layout_height="wrap_content"
             android:completionThreshold="0"
             android:hint="@string/langOptionsText"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/authorQuestion"
@@ -35,7 +49,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="10sp"
             android:text="@string/authorQText"
-            android:textSize="13sp" />
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/authorEditText"
@@ -45,7 +59,7 @@
             android:ems="10"
             android:hint="@string/authorHintText"
             android:inputType="textPersonName"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/authorRankingQuestion"
@@ -53,7 +67,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="10sp"
             android:text="@string/authorRankingText"
-            android:textSize="13sp" />
+            android:textSize="15sp" />
 
         <SeekBar
             android:id="@+id/authorRankingSlider"
@@ -69,28 +83,28 @@
             android:layout_height="wrap_content"
             android:paddingTop="10sp"
             android:text="@string/lengthQText"
-            android:textSize="13sp" />
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/shortLengthButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/shortLengthOptionText"
-            android:textSize="12sp" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/mediumLengthButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/mediumLengthOptionText"
-            android:textSize="12sp" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/longLengthButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/longLengthOptionText"
-            android:textSize="12sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/bookLengthRankingQuestion"
@@ -98,7 +112,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="10sp"
             android:text="@string/lengthRankingText"
-            android:textSize="13sp" />
+            android:textSize="15sp" />
 
         <SeekBar
             android:id="@+id/bookLengthRankingSlider"
@@ -114,21 +128,21 @@
             android:layout_height="wrap_content"
             android:paddingTop="10sp"
             android:text="@string/dateQText"
-            android:textSize="13sp" />
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/late1900sOption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/late1900sOptionText"
-            android:textSize="12sp" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/modern2000sOption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/modern2000sOptionText"
-            android:textSize="12sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/publicationDateRankingQuestion"
@@ -136,7 +150,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="10sp"
             android:text="@string/dateRankingText"
-            android:textSize="13sp" />
+            android:textSize="15sp" />
 
         <SeekBar
             android:id="@+id/publicationDateRankingSlider"
@@ -152,7 +166,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="10sp"
             android:text="@string/avgRatingRankingText"
-            android:textSize="13sp" />
+            android:textSize="15sp" />
 
         <SeekBar
             android:id="@+id/avgRatingRankingSlider"
@@ -167,7 +181,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="performDisplaySuggestions"
-            android:text="@string/continueButtonText" />
+            android:text="@string/continueButtonText"
+            android:textSize="30sp" />
 
     </LinearLayout>
 
