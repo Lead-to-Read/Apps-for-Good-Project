@@ -49,6 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:onClick="performFeedback"
         android:text="@string/feedbackText"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"

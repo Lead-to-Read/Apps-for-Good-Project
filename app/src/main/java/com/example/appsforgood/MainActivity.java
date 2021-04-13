@@ -61,14 +61,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void performStartSuggestions(View v) {
-        Intent start = new Intent(this, SuggestionActivity.class);
+        Intent start = new Intent(this, initialSurvey.class);
         startActivity(start);
     }
 
-    Button beginButton = (Button)findViewById(R.id.beginButton);
-
-    public void performBeginButton (View v) {
-        Intent intent = new Intent (this, initialSurvey.class);
-        startActivity(intent);
+    public void performFeedback(View v) {
+        Intent start = new Intent(this, Feedback.class);
+        startActivity(start);
     }
+
 }
