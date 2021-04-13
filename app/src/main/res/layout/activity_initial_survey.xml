@@ -182,7 +182,7 @@
             android:layout_height="wrap_content"
             android:onClick="performDisplaySuggestions"
             android:text="@string/continueButtonText"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
