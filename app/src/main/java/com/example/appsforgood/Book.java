@@ -43,6 +43,9 @@ public class Book {
     }
 
     public String getLanguage() {
+        if ((languageCode == "en-US") || (languageCode == "en-GB")) {
+            languageCode = "eng";
+        }
         return languageCode;
     }
 
