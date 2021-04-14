@@ -35,13 +35,15 @@
             android:text="@string/langQText"
             android:textSize="15sp" />
 
-        <MultiAutoCompleteTextView
-            android:id="@+id/langAutoComplete"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/langEditText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:completionThreshold="0"
+            android:ems="10"
             android:hint="@string/langOptionsText"
-            android:textSize="16sp" />
+            android:inputType="textPersonName"
+            android:textSize="16sp"
+            android:autofillHints="" />
 
         <TextView
             android:id="@+id/authorQuestion"
