@@ -11,5 +11,8 @@ public class SuggestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_survey);
+
+        final Manager manager = (Manager) getApplicationContext();
+
     }
 }
