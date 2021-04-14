@@ -10,13 +10,6 @@ import android.widget.MultiAutoCompleteTextView;
 
 public class initialSurvey extends AppCompatActivity {
 
-    /**
-     *
-     */
-    private static final String[] languages = new String[]{
-           "English", "French", "Spanish"
-    };
-
     private MultiAutoCompleteTextView editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
