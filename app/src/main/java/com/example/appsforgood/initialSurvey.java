@@ -16,10 +16,10 @@ public class initialSurvey extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_survey);
 
-        editText = findViewById(R.id.langEditText);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, languages);
-        editText.setAdapter(adapter);
-        editText.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
+        //editText = findViewById(R.id.langEditText);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, languages);
+       // editText.setAdapter(adapter);
+        //editText.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
     }
     public void performDisplaySuggestions(View v) {
         Intent start = new Intent(this, DisplayBooks.class);
