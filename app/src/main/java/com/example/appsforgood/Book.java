@@ -1,7 +1,5 @@
 package com.example.appsforgood;
 
-package com.example.appsforgood;
-
 public class Book {
 
     //Data
