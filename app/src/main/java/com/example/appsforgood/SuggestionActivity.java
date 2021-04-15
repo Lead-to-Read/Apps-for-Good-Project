@@ -25,7 +25,7 @@ public class SuggestionActivity extends AppCompatActivity {
         final Manager manager = (Manager) getApplicationContext();
         EditText langText = findViewById(R.id.langEditText);
         String lang = langText.getText().toString();
-        Log.v("Lang",lang);
+        Log.v("Lang","lang: " + lang);
         for (Book book : manager.getBooks()) {
             if (book.getLanguage().equalsIgnoreCase(lang))
                 correctLangBooks.add(book);
