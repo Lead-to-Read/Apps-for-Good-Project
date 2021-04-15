@@ -1,7 +1,10 @@
 package com.example.appsforgood;
 
+package com.example.appsforgood;
+
 public class Book {
 
+    //Data
     private String title;
     private String authors;
     private double avgRating;
@@ -10,6 +13,7 @@ public class Book {
     private int ratingsCount;
     private int year;
 
+    //Constructors
     /**
      * Parameter constructor that initializes 7 instance variables to the user's inputted variables
      * @param initTitle title of the book as a String
@@ -43,6 +47,7 @@ public class Book {
         year = 0000;
     }
 
+    //Methods
     /**
      * Gets title of the book as a String
      * @return title of the book as a String

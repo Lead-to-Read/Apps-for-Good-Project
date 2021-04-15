@@ -21,6 +21,7 @@
     <string name="longLengthOptionText">Long: Over 500 Pages</string>
     <string name="late1900sOptionText">Late 1900s: 1950-2000</string>
     <string name="modern2000sOptionText">2000s</string>
+    <string name="button" />
 
     <string name="initialSurveyTitleText">Initial Survey</string>
 

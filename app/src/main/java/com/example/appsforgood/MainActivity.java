@@ -16,6 +16,10 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * Starts activity
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,12 +27,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Called when user starts the app
+     */
     @Override
     protected void onStart() {
         super.onStart();
         readBookData();
     }
 
+    /**
+     * Extracts the year of a book from a full mm/dd/yyyy date
+     * @param start
+     * @return
+     */
     private int fixYear(String start) {
         int endMonth = start.indexOf("/");
         String middle = start.substring(endMonth + 1);
@@ -38,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
         return year;
     }
 
+    /**
+     * Reads data from .csv file
+     */
     private void readBookData() {
         InputStream stream = getResources().openRawResource(R.raw.books);
         BufferedReader provider = new BufferedReader(new InputStreamReader(stream));
@@ -61,11 +76,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Starts suggestion process
+     * @param v
+     */
     public void performStartSuggestions(View v) {
         Intent start = new Intent(this, initialSurvey.class);
         startActivity(start);
     }
 
+    /**
+     * Starts feedback process
+     * @param v
+     */
     public void performFeedback(View v) {
         Intent start = new Intent(this, Feedback.class);
         startActivity(start);
