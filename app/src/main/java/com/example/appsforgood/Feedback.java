@@ -6,6 +6,10 @@ import android.os.Bundle;
 
 public class Feedback extends AppCompatActivity {
 
+    /**
+     * Displays activity_feedback.xml Activity
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

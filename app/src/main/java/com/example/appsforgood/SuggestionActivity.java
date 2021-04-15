@@ -11,7 +11,9 @@ public class SuggestionActivity extends AppCompatActivity {
     private Book b;
 
     @Override
-    // Open survey at proper time
+    /**
+     * Open survey at proper time
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_survey);

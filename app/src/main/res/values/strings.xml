@@ -3,7 +3,7 @@
     <string name="homePageText">APP NAME</string>
     <string name="feedbackText">Press to give feedback</string>
     <string name="logoContentDescriptionText">APP LOGO</string>
-    <string name="langQText">What language should the book be written in?</string>
+    <string name="langQText">What language (as a <a href="http://loc.gov/standards/iso639-2/php/code_list.php">Alpha-3/ISO 639-2 Language Code</a>) should the book be written in?</string>
     <string name="authorQText">Who is your favorite author?</string>
     <string name="lengthQText">What book length do you prefer?</string>
     <string name="dateQText">What publication time period do you prefer?</string>
@@ -12,16 +12,17 @@
     <string name="lengthRankingText">On a scale of 0 (not at all) to 10 (essential), how much does length impact your book preferences?</string>
     <string name="dateRankingText">On a scale of 0 (not at all) to 10 (essential), how much does publication year impact your book preferences?</string>
     <string name="avgRatingRankingText">On a scale of 0 (not at all) to 10 (essential), how much does average rating impact your book preferences?</string>
+    <string name="popularityRankingText">On a scale of 0 (not at all) to 10 (essential), how much does book popularity impact your preferences?</string>
 
-
-    //In dataset, "English" would select eng, en-GB, en-US
-    <string name="langOptionsText">Select a language.</string>
+    <string name="langOptionsText">Type in the alpha-3/ISO 639-2 code of your preferred language.</string>
+    <string name="langCodeHyperlinkText">Alpha-3/ISO 639-2 Language Codes</string>
     <string name="authorHintText">Type in your favorite author.</string>
     <string name="shortLengthOptionText">Short: Less Than 200 Pages</string>
     <string name="mediumLengthOptionText">Medium: 200 to 500 Pages</string>
     <string name="longLengthOptionText">Long: Over 500 Pages</string>
     <string name="late1900sOptionText">Late 1900s: 1950-2000</string>
     <string name="modern2000sOptionText">2000s</string>
+    <string name="button" />
 
     <string name="initialSurveyTitleText">Initial Survey</string>
 
