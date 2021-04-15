@@ -20,6 +20,7 @@ public class SuggestionActivity extends AppCompatActivity {
      * Open survey at proper time
      */
     protected void onCreate(Bundle savedInstanceState) {
+        Log.v("Hi", "Hello");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_survey);
         final Manager manager = (Manager) getApplicationContext();
