@@ -12,6 +12,7 @@
     <string name="lengthRankingText">On a scale of 0 (not at all) to 10 (essential), how much does length impact your book preferences?</string>
     <string name="dateRankingText">On a scale of 0 (not at all) to 10 (essential), how much does publication year impact your book preferences?</string>
     <string name="avgRatingRankingText">On a scale of 0 (not at all) to 10 (essential), how much does average rating impact your book preferences?</string>
+    <string name="popularityRankingText">On a scale of 0 (not at all) to 10 (essential), how much does book popularity impact your preferences?</string>
 
     <string name="langOptionsText">Type in the alpha-3/ISO 639-2 code of your preferred language.</string>
     <string name="langCodeHyperlinkText">Alpha-3/ISO 639-2 Language Codes</string>
