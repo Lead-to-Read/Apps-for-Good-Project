@@ -22,6 +22,8 @@ public class initialSurvey extends AppCompatActivity {
     //private Book b;
     private ArrayList<Book> correctLangBooks = new ArrayList<Book>();
     private ArrayList<Integer> bookScores = new ArrayList<Integer>();
+    private int authorSubRating;
+    private int authorRating;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class initialSurvey extends AppCompatActivity {
     public void onContinueClick (View v) {
         //Make ArrayList, filtering out books with the incorrect language
         langFilter();
+        matchAuthor();
         Intent start = new Intent(this, DisplayBooks.class);
         startActivity(start);
     }
@@ -53,5 +56,25 @@ public class initialSurvey extends AppCompatActivity {
         }
     }
 
+    public void matchAuthor() {
+        EditText authorText = findViewById(R.id.authorEditText);
+        String userAuthor = authorText.getText().toString();
+        Log.v("Author", "Preferred author: " + userAuthor);
+
+        for (Book b : correctLangBooks) {
+            userAuthor.replaceAll("\\s","");
+            Log.v("Author", "Updated preferred author: " + userAuthor);
+            String bookAuthor = b.getAuthors().replaceAll("\\s","");
+            if (userAuthor.contains(bookAuthor)) {
+                authorSubRating = 2;
+            }
+            else {
+                authorSubRating = 1;
+            }
+            Log.v("Author", "Subrating: " + authorSubRating);
+        }
+        //Get user author rating from slider and multiply by authorSubRating
+        authorRating = authorSubRating;
+    }
 }
 
