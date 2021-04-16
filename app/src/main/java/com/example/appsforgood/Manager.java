@@ -18,7 +18,7 @@ public class Manager extends Application {
 
     /**
      * Adds a book to the arrayList
-     * @param book contains the book to be added
+     * @param book contains the book to be added to the arraylist books
      */
     public void addBook(Book book) {
         books.add(book);
