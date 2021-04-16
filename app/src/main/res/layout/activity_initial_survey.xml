@@ -5,8 +5,9 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="langFilter"
+    android:onClick="performDisplaySuggestions"
     tools:context=".initialSurvey">
+
 
     <TextView
         android:id="@+id/initialSurveyTitle"
@@ -44,6 +45,7 @@
             android:ems="10"
             android:hint="@string/langOptionsText"
             android:inputType="textPersonName"
+            android:singleLine="true"
             android:textSize="15sp" />
 
         <TextView
@@ -198,7 +200,7 @@
             android:id="@+id/continueButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="langFilter"
+            android:onClick="performDisplaySuggestions"
             android:text="@string/continueButtonText"
             android:textSize="20sp" />
 

@@ -6,13 +6,13 @@ import java.util.ArrayList;
 
 public class Manager extends Application {
 
-    ArrayList<Book> books = new ArrayList<Book>();
+    static ArrayList<Book> books = new ArrayList<Book>();
 
     /**
      * Returns arraylist
      * @return
      */
-    public ArrayList<Book> getBooks() {
+    public static ArrayList<Book> getBooks() {
         return books;
     }
 
