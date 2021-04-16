@@ -27,10 +27,8 @@ public class initialSurvey extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_survey);
-        //langFilterNew();
-        //performDisplaySuggestions();
     }
-    public void performDisplaySuggestions(View v) {
+    public void onContinueClick (View v) {
         EditText langText = findViewById(R.id.langEditText);
         String lang = langText.getText().toString();
         Log.v("Lang", "User Language: " + lang);
@@ -38,41 +36,16 @@ public class initialSurvey extends AppCompatActivity {
         for (Book b: Manager.getBooks()) {
             Log.v("Book", "All Book Titles: " + b.getTitle());
             if (b.getLanguage().equalsIgnoreCase(lang)) {
+                correctLangBooks.add(b);
                 Log.v("Book", "Book w/ Correct Language: " + b.getTitle());
             }
         }
+
+        for (Book b: correctLangBooks) {
+            Log.v("Book","Book in correctLangBooks" + b.getTitle());
+        }
         Intent start = new Intent(this, DisplayBooks.class);
         startActivity(start);
-        //Log.v("Bye", "Bello");
     }
-
-    /**public void langFilter() {
-        Log.v("Bye", "Bello");
-        final Manager manager = (Manager) getApplicationContext();
-        EditText langText = findViewById(R.id.langEditText);
-        String lang = langText.getText().toString();
-        Log.v("Lang", "lang: " + lang);
-        for (Book book : manager.getBooks()) {
-            if (book.getLanguage().equalsIgnoreCase(lang))
-                correctLangBooks.add(book);
-        }
-        for (Book entry : correctLangBooks) {
-            Log.v("Final", entry.getLanguage());
-        }
-    }**/
-
-    /**public void langFilterNew () {
-    ((EditText)findViewById(R.id.langEditText)).setOnEditorActionListener(new EditText.OnEditorActionListener() {
-        //@Override
-        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-            if (actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_DONE || event != null && event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
-                if (event == null || !event.isShiftPressed()) {
-                    // the user is done typing.
-                    Log.v("Done", "User is done typing.");
-                    return true; // consume.
-                }
-            }
-            return false; // pass on to other listeners.
-        } } );} }**/
 }
 

@@ -46,5 +46,20 @@ public class SuggestionActivity extends AppCompatActivity {
         for (Book b : correctLangBooks) {
             Log.v("Final: ", b.getLanguage());
         }**/
+
+    /**public void langFilter() {
+     Log.v("Bye", "Bello");
+     final Manager manager = (Manager) getApplicationContext();
+     EditText langText = findViewById(R.id.langEditText);
+     String lang = langText.getText().toString();
+     Log.v("Lang", "lang: " + lang);
+     for (Book book : manager.getBooks()) {
+     if (book.getLanguage().equalsIgnoreCase(lang))
+     correctLangBooks.add(book);
+     }
+     for (Book entry : correctLangBooks) {
+     Log.v("Final", entry.getLanguage());
+     }
+     }**/
     }
 
