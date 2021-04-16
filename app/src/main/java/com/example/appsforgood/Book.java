@@ -75,7 +75,7 @@ public class Book {
      * @return String language code of the book
      */
     public String getLanguage() {
-        if ((languageCode == "en-US") || (languageCode == "en-GB")) {
+        if ((languageCode.equals("en-US")) || (languageCode.equals("en-GB"))) {
             languageCode = "eng";
         }
         return languageCode;
