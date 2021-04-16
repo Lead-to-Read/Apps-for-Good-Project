@@ -7,7 +7,7 @@ import android.os.Bundle;
 public class Feedback extends AppCompatActivity {
 
     /**
-     * Displays activity_feedback.xml activity
+     * Displays activity from activity_feedback.xml
      * @param savedInstanceState
      */
     @Override
