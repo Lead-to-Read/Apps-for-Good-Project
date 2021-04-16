@@ -8,7 +8,7 @@ public class Feedback extends AppCompatActivity {
 
     /**
      * Displays activity from activity_feedback.xml
-     * @param savedInstanceState
+     * @param savedInstanceState used to open correct xml
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
