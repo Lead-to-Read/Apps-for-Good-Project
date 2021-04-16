@@ -64,7 +64,7 @@ public class Book {
 
     /**
      * Gets average Goodreads rating of the book
-     * @return average Goodreads rating of the book as a double out of 5
+     * @return average Goodreads rating of the book as a double with a maximum of 5.0
      */
     public double getAvgRating() {
         return avgRating;
