@@ -67,7 +67,7 @@ public class initialSurvey extends AppCompatActivity {
         for (Book b : correctLangBooks) {
             String bookAuthor = b.getAuthors().replaceAll("\\s", "");
             Log.v("Author", "Book author: " + bookAuthor);
-            if (userAuthorNew.contains(bookAuthor)) {
+            if (bookAuthor.contains(userAuthorNew)) {
                 authorSubRating = 2;
             } else {
                 authorSubRating = 1;
