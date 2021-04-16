@@ -9,8 +9,8 @@ public class Manager extends Application {
     static ArrayList<Book> books = new ArrayList<Book>();
 
     /**
-     * Gets arraylist of books
-     * @return arraylist of books
+     * Returns arraylist
+     * @return
      */
     public static ArrayList<Book> getBooks() {
         return books;
@@ -18,7 +18,7 @@ public class Manager extends Application {
 
     /**
      * Adds a book to the arraylist
-     * @param book contains the book to be added
+     * @param book
      */
     public void addBook(Book book) {
         books.add(book);
