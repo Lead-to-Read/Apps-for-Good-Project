@@ -72,7 +72,7 @@ public class Book {
 
     /**
      * Gets language code of the book
-     * @return String language code of the book (eng, en-US, en-GB, spa, or fre), where eng, en-US, en-GB are English, spa is Spanish, and fre is French
+     * @return String language code of the book
      */
     public String getLanguage() {
         if ((languageCode == "en-US") || (languageCode == "en-GB")) {

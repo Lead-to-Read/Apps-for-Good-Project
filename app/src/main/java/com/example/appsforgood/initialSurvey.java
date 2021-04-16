@@ -28,6 +28,25 @@ public class initialSurvey extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_survey);
     }
+    /**public void onContinueClick (View v) {
+        //Make ArrayList, filtering out books with the incorrect language
+        EditText langText = findViewById(R.id.langEditText);
+        String lang = langText.getText().toString();
+        Log.v("Lang", "User Language: " + lang);
+
+        for (Book b: Manager.getBooks()) {
+            Log.v("Book", "All Book Titles: " + b.getTitle());
+            if (b.getLanguage().equalsIgnoreCase(lang)) {
+                correctLangBooks.add(b);
+                Log.v("Book", "Book w/ Correct Language: " + b.getTitle());
+            }
+        }
+        for (Book b: correctLangBooks) {
+            Log.v("Book","Book in correctLangBooks" + b.getTitle());
+        }
+        Intent start = new Intent(this, DisplayBooks.class);
+        startActivity(start);
+    }**/
     public void onContinueClick (View v) {
         //Make ArrayList, filtering out books with the incorrect language
         langFilter();
