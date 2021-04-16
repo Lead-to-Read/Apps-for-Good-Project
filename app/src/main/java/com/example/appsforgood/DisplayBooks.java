@@ -7,7 +7,7 @@ import android.os.Bundle;
 public class DisplayBooks extends AppCompatActivity {
 
     /**
-     * Displays the activity_display_books.xml Activity
+     * Displays the activity_display_books.xml activity
      * @param savedInstanceState Bundle object
      */
     @Override
