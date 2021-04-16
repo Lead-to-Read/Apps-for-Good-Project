@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.MultiAutoCompleteTextView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class initialSurvey extends AppCompatActivity {
     public void onContinueClick (View v) {
         //Make ArrayList, filtering out books with the incorrect language
         langFilter();
-        matchAuthor();
+        authorScore();
         Intent start = new Intent(this, DisplayBooks.class);
         startActivity(start);
     }
@@ -56,25 +57,30 @@ public class initialSurvey extends AppCompatActivity {
         }
     }
 
-    public void matchAuthor() {
+    public void authorScore() {
         EditText authorText = findViewById(R.id.authorEditText);
         String userAuthor = authorText.getText().toString();
         Log.v("Author", "Preferred author: " + userAuthor);
+        String userAuthorNew = userAuthor.replaceAll("\\s","");
+        Log.v("Author", "Updated preferred author: " + userAuthorNew);
 
         for (Book b : correctLangBooks) {
-            userAuthor.replaceAll("\\s","");
-            Log.v("Author", "Updated preferred author: " + userAuthor);
-            String bookAuthor = b.getAuthors().replaceAll("\\s","");
-            if (userAuthor.contains(bookAuthor)) {
+            String bookAuthor = b.getAuthors().replaceAll("\\s", "");
+            Log.v("Author", "Book author: " + bookAuthor);
+            if (userAuthorNew.contains(bookAuthor)) {
                 authorSubRating = 2;
-            }
-            else {
+            } else {
                 authorSubRating = 1;
             }
             Log.v("Author", "Subrating: " + authorSubRating);
+
+            //Get user author rating from slider and multiply by authorSubRating
+            ProgressBar authorUserRanking = findViewById(R.id.authorRankingSlider);
+            int authorUserRankingInt = authorUserRanking.getProgress();
+            Log.v("Author", "Subrating: " + authorUserRankingInt);
+            double authorRating = authorSubRating * authorUserRankingInt;
+            Log.v("Author", "Author Score: " + authorRating);
         }
-        //Get user author rating from slider and multiply by authorSubRating
-        authorRating = authorSubRating;
     }
 }
 
