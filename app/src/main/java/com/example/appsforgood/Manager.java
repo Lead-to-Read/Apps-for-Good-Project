@@ -9,7 +9,7 @@ public class Manager extends Application {
     static ArrayList<Book> books = new ArrayList<Book>();
 
     /**
-     * gets arraylist of books
+     * Gets arraylist of books
      * @return arraylist of books
      */
     public static ArrayList<Book> getBooks() {
