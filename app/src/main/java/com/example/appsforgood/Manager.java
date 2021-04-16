@@ -9,15 +9,15 @@ public class Manager extends Application {
     static ArrayList<Book> books = new ArrayList<Book>();
 
     /**
-     * Gets arraylist of books
-     * @return arraylist of books
+     * Gets arrayList of books
+     * @return arrayList of books
      */
     public static ArrayList<Book> getBooks() {
         return books;
     }
 
     /**
-     * Adds a book to the arraylist
+     * Adds a book to the arrayList
      * @param book contains the book to be added
      */
     public void addBook(Book book) {
