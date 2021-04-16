@@ -2,7 +2,7 @@ package com.example.appsforgood;
 
 public class Book {
 
-    //Data
+    // Instance Variables
     private String title;
     private String authors;
     private double avgRating;
@@ -11,7 +11,7 @@ public class Book {
     private int ratingsCount;
     private int year;
 
-    //Constructors
+    // Constructors
     /**
      * Parameter constructor that initializes 7 instance variables to the user's inputted variables
      * @param initTitle title of the book as a String
@@ -64,7 +64,7 @@ public class Book {
 
     /**
      * Gets average Goodreads rating of the book
-     * @return average Goodreads rating of the book as a double out of 5
+     * @return average Goodreads rating of the book as a double with a maximum of 5.0
      */
     public double getAvgRating() {
         return avgRating;

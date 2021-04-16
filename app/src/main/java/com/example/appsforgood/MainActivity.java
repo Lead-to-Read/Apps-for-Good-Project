@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Starts activity
-     * @param savedInstanceState
+     * @param savedInstanceState used to call superclass onCreate()
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Extracts the year of a book from a full mm/dd/yyyy date
-     * @param start
-     * @return
+     * @param start the string containing the month, date, and year
+     * @return the year of publication of the book
      */
     private int fixYear(String start) {
         int endMonth = start.indexOf("/");
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Starts suggestion process
-     * @param v
+     * @param v used to begin the suggestion process
      */
     public void performStartSuggestions(View v) {
         Intent start = new Intent(this, initialSurvey.class);
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Starts feedback process
-     * @param v
+     * @param v used to begin the feedback process
      */
     public void performFeedback(View v) {
         Intent start = new Intent(this, Feedback.class);
