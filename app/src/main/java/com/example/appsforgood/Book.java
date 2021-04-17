@@ -11,7 +11,7 @@ public class Book {
     private int ratingsCount;
     private int year;
 
-    // Constructors
+    // Constructor Methods
     /**
      * Parameter constructor that initializes 7 instance variables to the user's inputted variables
      * @param initTitle title of the book as a String
