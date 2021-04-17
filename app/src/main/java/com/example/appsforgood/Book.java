@@ -17,7 +17,7 @@ public class Book {
      * @param initTitle title of the book as a String
      * @param initAuthors author(s) of the book as Strings separated by commas
      * @param initAvgRating average Goodreads rating of the book as a double out of 5
-     * @param initLanguageCode language code of the book (eng, en-US, en-GB, spa, or fre), where eng, en-US, en-GB are English, spa is Spanish, and fre is French
+     * @param initLanguageCode Alpha-3/ISO 639-2 language code of the book where eng, en-US, and en-GB are English
      * @param initNumPages number of pages in the book as an int
      * @param initRatingsCount number of ratings for the book on Goodreads, indicator of popularity
      * @param initYear book's year of publication
