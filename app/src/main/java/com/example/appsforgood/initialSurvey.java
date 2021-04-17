@@ -39,7 +39,7 @@ public class initialSurvey extends AppCompatActivity {
 
     /**
      * Calls all methods used after the initial survey is completed by the user
-     * @param v
+     * @param v used to begin the algorithm
      */
     public void onContinueClick (View v) {
         //Make ArrayList, filtering out books with the incorrect language
@@ -50,6 +50,9 @@ public class initialSurvey extends AppCompatActivity {
         startActivity(start);
     }
 
+    /**
+     * Filters out books that are not the language specified by the user in the initial survey
+     */
     public void langFilter() {
         EditText langText = findViewById(R.id.langEditText);
         String lang = langText.getText().toString();
@@ -67,6 +70,9 @@ public class initialSurvey extends AppCompatActivity {
         }
     }
 
+    /**
+     * Assigns a rating based on the author of each book and the author/importance entered by the user
+     */
     public void authorScore() {
         EditText authorText = findViewById(R.id.authorEditText);
         String userAuthor = authorText.getText().toString();
@@ -95,6 +101,10 @@ public class initialSurvey extends AppCompatActivity {
         }
     }
 
+    /**
+     * Sets the page bounds for a short book (when user clicks short button)
+     * @param v used to set page bounds for short books
+     */
     public void shortLengthScore(View v) {
         preferredLength = "Short";
         lowerPageBound = 0;
@@ -102,18 +112,29 @@ public class initialSurvey extends AppCompatActivity {
         Log.v("Check", "Length " + preferredLength);
     }
 
+    /**
+     * Sets the page bounds for a medium book (when user clicks medium button)
+     * @param v used to set page bounds for medium books
+     */
     public void mediumLengthScore(View v) {
         preferredLength = "Medium";
         lowerPageBound = 201;
         upperPageBound = 500;
     }
 
+    /**
+     * Sets the page bounds for a long book (when user clicks long button)
+     * @param v used to set page bounds for long books
+     */
     public void longLengthScore(View v) {
         preferredLength = "Long";
         lowerPageBound = 501;
         upperPageBound = 100000; // Safe upper bound for largest book
     }
 
+    /**
+     * Assigns a rating to each book based on its length using the preferences specified by the user in the initial survey
+     */
     public void lengthScore() {
         Log.v("Check", "Length Books " + correctLangBooks.size());
         for (int index = 0; index < correctLangBooks.size(); index++) {
@@ -141,5 +162,4 @@ public class initialSurvey extends AppCompatActivity {
         }
         Log.v("Check", "LengthR");
 	}
-
 }
