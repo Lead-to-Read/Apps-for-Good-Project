@@ -26,6 +26,9 @@ public class InitialSurvey extends AppCompatActivity {
     private String preferredLength;
     private int lowerPageBound;
     private int upperPageBound;
+    private String preferredPubTime;
+    private int lowerPubYear;
+    private int upperPubYear;
 
     @Override
     /**
@@ -46,6 +49,7 @@ public class InitialSurvey extends AppCompatActivity {
         langFilter();
         authorScore();
         lengthScore();
+        publicationDateScore();
         Intent start = new Intent(this, DisplayBooks.class);
         startActivity(start);
     }
@@ -164,6 +168,60 @@ public class InitialSurvey extends AppCompatActivity {
         }
         Log.v("Check", "LengthR");
 	}
+
+        /**
+         * Sets the page bounds for a short book (when user clicks short button)
+         * @param v used to set page bounds for short books
+         */
+        public void late1900sScore(View v) {
+            preferredPubTime = "late 1900s";
+            lowerPubYear = 1950;
+            upperPubYear = 2000;
+            Log.v("PubCheck", "Publication Time " + preferredPubTime);
+        }
+
+        /**
+         * Sets the page bounds for a medium book (when user clicks medium button)
+         * @param v used to set page bounds for medium books
+         */
+        public void modern2000sScore(View v) {
+            preferredPubTime = "2000s";
+            lowerPubYear = 2001;
+            upperPubYear = 3000; //Safe upper publication year bound
+            Log.v("PubCheck", "Publication Time " + preferredPubTime);
+        }
+
+
+        /**
+         * Assigns a rating to each book based on its length using the preferences specified by the user in the initial survey
+         */
+        public void publicationDateScore() {
+            for (int index = 0; index < correctLangBooks.size(); index++) {
+                int currentPubYear = correctLangBooks.get(index).getYear();
+                Log.v("PubCheck", "Publication of current book" + currentPubYear);
+                double subTimeRating = 0;
+
+                if (lowerPubYear <= currentPubYear && currentPubYear <= upperPubYear) {
+                    subTimeRating = 1;
+                } else if (lowerPubYear - 5 <= currentPubYear && currentPubYear <= upperPubYear + 5) {
+                    subTimeRating = 0.75;
+                } else if (lowerPubYear - 10 <= currentPubYear && currentPubYear <= upperPubYear + 10) {
+                    subTimeRating = 0.5;
+                } else if (lowerPubYear - 15 <= currentPubYear && currentPubYear <= upperPubYear + 15) {
+                    subTimeRating = 0.25;
+                } else {
+                    subTimeRating = 0;
+                }
+                Log.v("PubCheck", "Subrating of current book" + correctLangBooks.get(index).getTitle() + subTimeRating);
+                ProgressBar pubDateRanking = findViewById(R.id.publicationDateRankingSlider);
+                int pubDateUserRanking = pubDateRanking.getProgress();
+                double pubRanking = (subTimeRating * pubDateUserRanking);
+                Log.v("PubCheck", "Final pub rating of current book" + correctLangBooks.get(index).getTitle() + pubRanking);
+                double currentTotalRating = bookScores.get(index);
+                bookScores.set(index, currentTotalRating + pubRanking);
+                Log.v("PubCheck", "Final rating of current book" + bookScores.get(index));
+            }
+        }
 
     /**
      * Assigns a rating to each book based on the average rating of each book/the importance entered by the user

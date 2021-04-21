@@ -152,6 +152,7 @@
                 android:id="@+id/late1900sOption"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="late1900sScore"
                 android:text="@string/late1900sOptionText"
                 android:textSize="12sp" />
 
@@ -159,6 +160,7 @@
                 android:id="@+id/modern2000sOption"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="modern2000sScore"
                 android:text="@string/modern2000sOptionText"
                 android:textSize="12sp" />
         </RadioGroup>
