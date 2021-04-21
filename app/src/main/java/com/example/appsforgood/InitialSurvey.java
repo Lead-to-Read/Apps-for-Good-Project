@@ -164,6 +164,10 @@ public class InitialSurvey extends AppCompatActivity {
         }
         Log.v("Check", "LengthR");
 	}
+
+    /**
+     * Assigns a rating to each book based on the average rating of each book/the importance entered by the user
+     */
 	public void ratingScore() {
         for (int index = 0; index < correctLangBooks.size(); index++) {
             double bookRating = correctLangBooks.get(index).getAvgRating();
