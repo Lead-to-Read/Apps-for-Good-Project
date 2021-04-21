@@ -5,8 +5,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="onContinueClick"
-    tools:context=".initialSurvey">
+    tools:context=".InitialSurvey">
 
 
     <TextView
@@ -90,29 +89,35 @@
             android:text="@string/lengthQText"
             android:textSize="14sp" />
 
-        <Button
-            android:id="@+id/shortLengthButton"
+        <RadioGroup
+            android:id="@+id/lengthButtons"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="shortLengthScore"
-            android:text="@string/shortLengthOptionText"
-            android:textSize="12sp" />
+            android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/mediumLengthButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="mediumLengthScore"
-            android:text="@string/mediumLengthOptionText"
-            android:textSize="12sp" />
+            <RadioButton
+                android:id="@+id/shortLengthButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="shortLengthScore"
+                android:text="@string/shortLengthOptionText"
+                android:textSize="12sp" />
 
-        <Button
-            android:id="@+id/longLengthButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="longLengthScore"
-            android:text="@string/longLengthOptionText"
-            android:textSize="12sp" />
+            <RadioButton
+                android:id="@+id/mediumLengthButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="mediumLengthScore"
+                android:text="@string/mediumLengthOptionText"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/longLengthButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="longLengthScore"
+                android:text="@string/longLengthOptionText"
+                android:textSize="12sp" />
+            </RadioGroup>
 
         <TextView
             android:id="@+id/bookLengthRankingQuestion"
@@ -138,19 +143,25 @@
             android:text="@string/dateQText"
             android:textSize="14sp" />
 
-        <Button
-            android:id="@+id/late1900sOption"
+        <RadioGroup
+            android:id="@+id/publicationDateButtons"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/late1900sOptionText"
-            android:textSize="12sp" />
+            android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/modern2000sOption"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/modern2000sOptionText"
-            android:textSize="12sp" />
+            <RadioButton
+                android:id="@+id/late1900sOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/late1900sOptionText"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/modern2000sOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/modern2000sOptionText"
+                android:textSize="12sp" />
+        </RadioGroup>
 
         <TextView
             android:id="@+id/publicationDateRankingQuestion"

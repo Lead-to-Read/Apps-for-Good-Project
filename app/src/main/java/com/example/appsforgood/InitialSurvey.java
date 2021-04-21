@@ -120,6 +120,7 @@ public class InitialSurvey extends AppCompatActivity {
         preferredLength = "Medium";
         lowerPageBound = 201;
         upperPageBound = 500;
+        Log.v("Check", "Length " + preferredLength);
     }
 
     /**
@@ -129,7 +130,8 @@ public class InitialSurvey extends AppCompatActivity {
     public void longLengthScore(View v) {
         preferredLength = "Long";
         lowerPageBound = 501;
-        upperPageBound = 100000; // Safe upper bound for largest book
+        upperPageBound = 100000;// Safe upper bound for largest book
+        Log.v("Check", "Length " + preferredLength);
     }
 
     /**

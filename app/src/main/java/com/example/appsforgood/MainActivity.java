@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
      * @param v used to begin the suggestion process
      */
     public void performStartSuggestions(View v) {
-        Intent start = new Intent(this, initialSurvey.class);
+        Intent start = new Intent(this, InitialSurvey.class);
         startActivity(start);
     }
 
