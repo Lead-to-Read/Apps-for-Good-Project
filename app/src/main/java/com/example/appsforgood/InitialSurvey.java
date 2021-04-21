@@ -157,11 +157,22 @@ public class InitialSurvey extends AppCompatActivity {
             Log.v("Check", "Length" + subLengthRating);
             ProgressBar lengthUserRanking = findViewById(R.id.bookLengthRankingSlider);
             int lengthUserRankingInt = lengthUserRanking.getProgress();
-            double lengthRating = (subLengthRating * lengthUserRankingInt);
+            double lengthRating = subLengthRating * lengthUserRankingInt;
             Log.v("CheckA", "Length" + subLengthRating);
             double currentTotalRating = bookScores.get(index);
             bookScores.set(index, currentTotalRating + lengthRating);
         }
         Log.v("Check", "LengthR");
 	}
+	public void ratingScore() {
+        for (int index = 0; index < correctLangBooks.size(); index++) {
+            double bookRating = correctLangBooks.get(index).getAvgRating();
+            double subAvgRatingRating = bookRating / 3.934; // 3.934 is the mean rating of all books in the dataset
+            ProgressBar AvgRatingUserRanking = findViewById(R.id.avgRatingRankingSlider);
+            int AvgRatingUserRankingInt = AvgRatingUserRanking.getProgress();
+            double AvgRatingRating = subAvgRatingRating * AvgRatingUserRankingInt;
+            double currentTotalRating = bookScores.get(index);
+            bookScores.set(index, currentTotalRating + AvgRatingRating);
+        }
+    }
 }
