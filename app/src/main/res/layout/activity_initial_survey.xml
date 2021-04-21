@@ -5,20 +5,9 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
     tools:context=".InitialSurvey">
 
-
-    <TextView
-        android:id="@+id/initialSurveyTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/initialSurveyTitleText"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:id="@+id/scrollDown"
@@ -33,12 +22,17 @@
             android:id="@+id/linearLayoutQuestions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="10dp"
 
-            android:layout_marginBottom="50dp"
+            android:layout_marginTop="30dp"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/initialSurveyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/initialSurveyTitleText"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/langQuestion"
@@ -227,7 +221,9 @@
             <Button
                 android:id="@+id/continueButton"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="60dp"
+                android:layout_marginBottom="20dp"
                 android:onClick="onContinueClick"
                 android:text="@string/continueButtonText"
                 android:textSize="20sp" />
