@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class initialSurvey extends AppCompatActivity {
+public class InitialSurvey extends AppCompatActivity {
 
     // Instance Variables
     private ArrayList<Book> correctLangBooks = new ArrayList<Book>();

@@ -1,1 +1,1 @@
-// Ignore this class, moved to initialSurvey.java
+// Ignore this class, moved to InitialSurvey.java
