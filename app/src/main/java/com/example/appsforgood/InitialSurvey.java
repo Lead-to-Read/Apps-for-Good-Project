@@ -226,15 +226,26 @@ public class InitialSurvey extends AppCompatActivity {
     /**
      * Assigns a rating to each book based on the average rating of each book/the importance entered by the user
      */
-	public void ratingScore() {
+    public void ratingScore() {
         for (int index = 0; index < correctLangBooks.size(); index++) {
             double bookRating = correctLangBooks.get(index).getAvgRating();
             double subAvgRatingRating = bookRating / 3.934; // 3.934 is the mean rating of all books in the dataset
-            ProgressBar AvgRatingUserRanking = findViewById(R.id.avgRatingRankingSlider);
-            int AvgRatingUserRankingInt = AvgRatingUserRanking.getProgress();
-            double AvgRatingRating = subAvgRatingRating * AvgRatingUserRankingInt;
+            Log.v("AvgRating", "" + subAvgRatingRating);
+            ProgressBar avgRatingUserRanking = findViewById(R.id.avgRatingRankingSlider);
+            int avgRatingUserRankingInt = avgRatingUserRanking.getProgress();
+            double avgRatingRating = subAvgRatingRating * avgRatingUserRankingInt;
+            Log.v("Rating Score", "" + avgRatingRating);
             double currentTotalRating = bookScores.get(index);
-            bookScores.set(index, currentTotalRating + AvgRatingRating);
+            bookScores.set(index, currentTotalRating + avgRatingRating);
+        }
+        for (double score : bookScores) {
+            Log.v("Score", "" + score);
         }
     }
+
+    public void popularityScore() {
+
+    }
 }
+
+
