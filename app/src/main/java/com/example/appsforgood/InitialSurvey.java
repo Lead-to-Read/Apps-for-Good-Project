@@ -229,7 +229,7 @@ public class InitialSurvey extends AppCompatActivity {
     public void ratingScore() {
         for (int index = 0; index < correctLangBooks.size(); index++) {
             double bookRating = correctLangBooks.get(index).getAvgRating();
-            double subAvgRatingRating = bookRating / 3.934; // 3.934 is the mean rating of all books in the dataset
+            double subAvgRatingRating = (bookRating / 3.934) + 0.35 * (bookRating - 3.934); // 3.934 is the mean rating of all books in the dataset, while 0.35 is the standard deviation. The standard deviation is multiplied instead of divided since it's less than 1
             Log.v("AvgRating", "" + subAvgRatingRating);
             ProgressBar avgRatingUserRanking = findViewById(R.id.avgRatingRankingSlider);
             int avgRatingUserRankingInt = avgRatingUserRanking.getProgress();
