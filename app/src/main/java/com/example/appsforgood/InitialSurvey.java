@@ -50,6 +50,7 @@ public class InitialSurvey extends AppCompatActivity {
         authorScore();
         lengthScore();
         publicationDateScore();
+        ratingScore();
         Intent start = new Intent(this, DisplayBooks.class);
         startActivity(start);
     }
@@ -241,10 +242,6 @@ public class InitialSurvey extends AppCompatActivity {
         for (double score : bookScores) {
             Log.v("Score", "" + score);
         }
-    }
-
-    public void popularityScore() {
-
     }
 }
 
