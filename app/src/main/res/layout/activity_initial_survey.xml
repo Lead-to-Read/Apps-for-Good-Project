@@ -20,213 +20,220 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/linearLayoutQuestions"
+    <ScrollView
+        android:id="@+id/scrollDown"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="10dp"
-
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/langQuestion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10sp"
-            android:text="@string/langQText"
-            android:textSize="14sp" />
-
-        <EditText
-            android:id="@+id/langEditText"
+        <LinearLayout
+            android:id="@+id/linearLayoutQuestions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/langOptionsText"
-            android:inputType="textPersonName"
-            android:singleLine="true"
-            android:textSize="15sp" />
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
 
-        <TextView
-            android:id="@+id/authorQuestion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10sp"
-            android:text="@string/authorQText"
-            android:textSize="14sp" />
+            android:layout_marginBottom="50dp"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/authorEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/authorHintText"
-            android:inputType="textPersonName"
-            android:textSize="15sp" />
+            <TextView
+                android:id="@+id/langQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10sp"
+                android:text="@string/langQText"
+                android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/authorRankingQuestion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10sp"
-            android:text="@string/authorRankingText"
-            android:textSize="14sp" />
-
-        <SeekBar
-            android:id="@+id/authorRankingSlider"
-            style="@style/Widget.AppCompat.SeekBar.Discrete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="10"
-            android:progress="0" />
-
-        <TextView
-            android:id="@+id/bookLengthQuestion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10sp"
-            android:text="@string/lengthQText"
-            android:textSize="14sp" />
-
-        <RadioGroup
-            android:id="@+id/lengthButtons"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/shortLengthButton"
+            <EditText
+                android:id="@+id/langEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="shortLengthScore"
-                android:text="@string/shortLengthOptionText"
-                android:textSize="12sp" />
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/langOptionsText"
+                android:inputType="textPersonName"
+                android:singleLine="true"
+                android:textSize="15sp" />
 
-            <RadioButton
-                android:id="@+id/mediumLengthButton"
+            <TextView
+                android:id="@+id/authorQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="mediumLengthScore"
-                android:text="@string/mediumLengthOptionText"
-                android:textSize="12sp" />
+                android:paddingTop="10sp"
+                android:text="@string/authorQText"
+                android:textSize="14sp" />
 
-            <RadioButton
-                android:id="@+id/longLengthButton"
+            <EditText
+                android:id="@+id/authorEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="longLengthScore"
-                android:text="@string/longLengthOptionText"
-                android:textSize="12sp" />
-        </RadioGroup>
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/authorHintText"
+                android:inputType="textPersonName"
+                android:textSize="15sp" />
 
-        <TextView
-            android:id="@+id/bookLengthRankingQuestion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10sp"
-            android:text="@string/lengthRankingText"
-            android:textSize="14sp" />
-
-        <SeekBar
-            android:id="@+id/bookLengthRankingSlider"
-            style="@style/Widget.AppCompat.SeekBar.Discrete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="10"
-            android:progress="0" />
-
-        <TextView
-            android:id="@+id/publicationDateQuestion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10sp"
-            android:text="@string/dateQText"
-            android:textSize="14sp" />
-
-        <RadioGroup
-            android:id="@+id/publicationDateButtons"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/late1900sOption"
+            <TextView
+                android:id="@+id/authorRankingQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="late1900sScore"
-                android:text="@string/late1900sOptionText"
-                android:textSize="12sp" />
+                android:paddingTop="10sp"
+                android:text="@string/authorRankingText"
+                android:textSize="14sp" />
 
-            <RadioButton
-                android:id="@+id/modern2000sOption"
+            <SeekBar
+                android:id="@+id/authorRankingSlider"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="modern2000sScore"
-                android:text="@string/modern2000sOptionText"
-                android:textSize="12sp" />
-        </RadioGroup>
+                android:max="10"
+                android:progress="0" />
 
-        <TextView
-            android:id="@+id/publicationDateRankingQuestion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10sp"
-            android:text="@string/dateRankingText"
-            android:textSize="14sp" />
+            <TextView
+                android:id="@+id/bookLengthQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10sp"
+                android:text="@string/lengthQText"
+                android:textSize="14sp" />
 
-        <SeekBar
-            android:id="@+id/publicationDateRankingSlider"
-            style="@style/Widget.AppCompat.SeekBar.Discrete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="10"
-            android:progress="0" />
+            <RadioGroup
+                android:id="@+id/lengthButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/avgRatingRankingQuestion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10sp"
-            android:text="@string/avgRatingRankingText"
-            android:textSize="14sp" />
+                <RadioButton
+                    android:id="@+id/shortLengthButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="shortLengthScore"
+                    android:text="@string/shortLengthOptionText"
+                    android:textSize="12sp" />
 
-        <SeekBar
-            android:id="@+id/avgRatingRankingSlider"
-            style="@style/Widget.AppCompat.SeekBar.Discrete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="10"
-            android:progress="0" />
+                <RadioButton
+                    android:id="@+id/mediumLengthButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="mediumLengthScore"
+                    android:text="@string/mediumLengthOptionText"
+                    android:textSize="12sp" />
 
-        <TextView
-            android:id="@+id/popularityRankingQuestion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/popularityRankingText"
-            android:textSize="14sp" />
+                <RadioButton
+                    android:id="@+id/longLengthButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="longLengthScore"
+                    android:text="@string/longLengthOptionText"
+                    android:textSize="12sp" />
+            </RadioGroup>
 
-        <SeekBar
-            android:id="@+id/popularityRankingSlider"
-            style="@style/Widget.AppCompat.SeekBar.Discrete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="10"
-            android:progress="0" />
+            <TextView
+                android:id="@+id/bookLengthRankingQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10sp"
+                android:text="@string/lengthRankingText"
+                android:textSize="14sp" />
 
-        <Button
-            android:id="@+id/continueButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onContinueClick"
-            android:text="@string/continueButtonText"
-            android:textSize="20sp" />
+            <SeekBar
+                android:id="@+id/bookLengthRankingSlider"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="10"
+                android:progress="0" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/publicationDateQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10sp"
+                android:text="@string/dateQText"
+                android:textSize="14sp" />
+
+            <RadioGroup
+                android:id="@+id/publicationDateButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/late1900sOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="late1900sScore"
+                    android:text="@string/late1900sOptionText"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/modern2000sOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="modern2000sScore"
+                    android:text="@string/modern2000sOptionText"
+                    android:textSize="12sp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/publicationDateRankingQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10sp"
+                android:text="@string/dateRankingText"
+                android:textSize="14sp" />
+
+            <SeekBar
+                android:id="@+id/publicationDateRankingSlider"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="10"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/avgRatingRankingQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10sp"
+                android:text="@string/avgRatingRankingText"
+                android:textSize="14sp" />
+
+            <SeekBar
+                android:id="@+id/avgRatingRankingSlider"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="10"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/popularityRankingQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/popularityRankingText"
+                android:textSize="14sp" />
+
+            <SeekBar
+                android:id="@+id/popularityRankingSlider"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="10"
+                android:progress="0" />
+
+            <Button
+                android:id="@+id/continueButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onContinueClick"
+                android:text="@string/continueButtonText"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
