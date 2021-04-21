@@ -24,8 +24,13 @@
         android:id="@+id/linearLayoutQuestions"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -117,7 +122,7 @@
                 android:onClick="longLengthScore"
                 android:text="@string/longLengthOptionText"
                 android:textSize="12sp" />
-            </RadioGroup>
+        </RadioGroup>
 
         <TextView
             android:id="@+id/bookLengthRankingQuestion"
