@@ -260,7 +260,6 @@ public class InitialSurvey extends AppCompatActivity {
                 subPopularityRating = bookPopularity / 4993.5;
             }
             Log.v("Popularity", "subPopRanking " + subPopularityRating);
-            Log.v("Popularity", "Number of book ratings " + bookPopularity);
             ProgressBar popRanking = findViewById(R.id.popularityRankingSlider);
             int popRankingInt = popRanking.getProgress();
             double popularityRating = subPopularityRating * popRankingInt;
