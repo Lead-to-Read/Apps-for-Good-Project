@@ -51,6 +51,7 @@ public class InitialSurvey extends AppCompatActivity {
         lengthScore();
         publicationDateScore();
         ratingScore();
+        popularityScore();
         Intent start = new Intent(this, DisplayBooks.class);
         startActivity(start);
     }
@@ -238,6 +239,34 @@ public class InitialSurvey extends AppCompatActivity {
             Log.v("Rating Score", "" + avgRatingRating);
             double currentTotalRating = bookScores.get(index);
             bookScores.set(index, currentTotalRating + avgRatingRating);
+        }
+        for (double score : bookScores) {
+            Log.v("Score", "" + score);
+        }
+    }
+
+    public void popularityScore() {
+        for (int index = 0; index < correctLangBooks.size(); index++) {
+            double bookPopularity = correctLangBooks.get(index).getRatingsCount();
+            double subPopularityRating;
+            /**if (bookPopularity > 12327.75) { //12327.75 is the minimum to be an outlier in the dataset, which was skewed right
+                subPopularityRating = 1;
+            }**/
+            if (bookPopularity > 4993.5) { //4993.5 is Q3 of the dataset, which was skewed right
+                subPopularityRating = 1;
+            }
+            else {
+                //subPopularityRating = bookPopularity / 12327.75;
+                subPopularityRating = bookPopularity / 4993.5;
+            }
+            Log.v("Popularity", "subPopRanking " + subPopularityRating);
+            Log.v("Popularity", "Number of book ratings " + bookPopularity);
+            ProgressBar popRanking = findViewById(R.id.popularityRankingSlider);
+            int popRankingInt = popRanking.getProgress();
+            double popularityRating = subPopularityRating * popRankingInt;
+            Log.v("Popularity", "Popularity final score " + popularityRating);
+            double currentTotalRating = bookScores.get(index);
+            bookScores.set(index, currentTotalRating + popularityRating);
         }
         for (double score : bookScores) {
             Log.v("Score", "" + score);
