@@ -52,6 +52,7 @@ public class InitialSurvey extends AppCompatActivity {
         publicationDateScore();
         ratingScore();
         popularityScore();
+        getHighest();
         Intent start = new Intent(this, DisplayBooks.class);
         startActivity(start);
     }
@@ -90,7 +91,7 @@ public class InitialSurvey extends AppCompatActivity {
             String bookAuthor = b.getAuthors().replaceAll("\\s", "");
             Log.v("Author", "Book author: " + bookAuthor);
             double authorSubRating;
-            if (userAuthorNew.contains(bookAuthor)) {
+            if (bookAuthor.contains(userAuthorNew)) {
                 authorSubRating = 1;
             } else {
                 authorSubRating = 0;
@@ -270,6 +271,21 @@ public class InitialSurvey extends AppCompatActivity {
         for (double score : bookScores) {
             Log.v("Score", "" + score);
         }
+    }
+
+    public void getHighest () {
+        double maxScore = bookScores.get(0);
+        //int i = 0;
+        int correctIndex = 0;
+        for (int i = 0; i < bookScores.size(); i++) {
+           if (bookScores.get(i) > maxScore) {
+               maxScore = bookScores.get(i);
+               correctIndex = i;
+           }
+        }
+        Log.v("Highest Scoring Book","Index " + correctIndex); //~37
+        Log.v("Highest Scoring Book", "Equals" + "correctLangBooks size:" + correctLangBooks.size() + "bookScores size: " + bookScores.size()); //46 if eng is chosen
+        Log.v("Highest Scoring Book", "Highest Scoring Book" + correctLangBooks.get(correctIndex).getTitle() + maxScore);
     }
 }
 
