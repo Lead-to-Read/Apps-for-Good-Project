@@ -91,6 +91,7 @@ public class InitialSurvey extends AppCompatActivity {
             String bookAuthor = b.getAuthors().replaceAll("\\s", "");
             Log.v("Author", "Book author: " + bookAuthor);
             double authorSubRating;
+            //.contains() is normally case-sensitive.
             if (bookAuthor.toLowerCase().contains(userAuthorNew.toLowerCase())) {
                 authorSubRating = 1;
             } else {
