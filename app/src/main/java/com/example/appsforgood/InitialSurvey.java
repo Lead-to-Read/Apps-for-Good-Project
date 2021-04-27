@@ -21,8 +21,8 @@ import java.util.ArrayList;
 public class InitialSurvey extends AppCompatActivity {
 
     // Instance Variables
-    private ArrayList<Book> correctLangBooks = new ArrayList<Book>();
-    private ArrayList<Double> bookScores = new ArrayList<Double>();
+    private static ArrayList<Book> correctLangBooks = new ArrayList<Book>();
+    private static ArrayList<Double> bookScores = new ArrayList<Double>();
     private String preferredLength;
     private int lowerPageBound;
     private int upperPageBound;
@@ -271,7 +271,7 @@ public class InitialSurvey extends AppCompatActivity {
             bookScores.set(index, currentTotalRating + popularityRating);
         }
         for (double score : bookScores) {
-            Log.v("Score", correctLangBooks.get(bookScores.indexOf(score)).getTitle() + " " + score);
+            Log.v("Score", correctLangBooks.get(bookScores.indexOf(score)).getISBN13() + " " + score);
         }
     }
 
@@ -289,6 +289,16 @@ public class InitialSurvey extends AppCompatActivity {
         Log.v("Highest Scoring Book", "Equals" + "correctLangBooks size:" + correctLangBooks.size() + "bookScores size: " + bookScores.size()); //46 if eng is chosen
         Log.v("Highest Scoring Book", "Highest Scoring Book" + correctLangBooks.get(correctIndex).getTitle() + maxScore);
     }
+
+    public static ArrayList<Book> getCorrectLangBooks() {
+        return correctLangBooks;
+    }
+
+    public static ArrayList<Double> getBookScores() {
+        return bookScores;
+    }
+
+
 }
 
 
