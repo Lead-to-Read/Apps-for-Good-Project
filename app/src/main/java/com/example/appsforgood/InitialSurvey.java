@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -38,6 +39,12 @@ public class InitialSurvey extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_survey);
+        setUpHyperLink();
+    }
+
+    private void setUpHyperLink() {
+        TextView linkTextView = findViewById(R.id.langQuestion);
+        linkTextView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     /**
