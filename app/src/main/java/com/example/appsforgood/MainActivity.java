@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 // Split by ',' (CSV file)
                 String[] attributes = entry.split(",");
                 Log.v("Reading", attributes[1] + " " + attributes[2]);
-                Book current = new Book(attributes[1], attributes[2], Double.parseDouble(attributes[3]), attributes[5], attributes[6], Integer.parseInt(attributes[7]), Integer.parseInt(attributes[8]), fixYear(attributes[10]));
+                Book current = new Book(attributes[1], attributes[2], Double.parseDouble(attributes[3]), attributes[5], attributes[6], Integer.parseInt(attributes[7]), Integer.parseInt(attributes[8]), fixYear(attributes[10])); // all necessary factors
                 manager.addBook(current);
             }
 
