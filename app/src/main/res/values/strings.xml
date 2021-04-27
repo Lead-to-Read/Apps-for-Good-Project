@@ -31,6 +31,9 @@
 
     //activity_display_books.xml
     <string name="bookSuggestionsTitleText">Suggested Books</string>
+    <string-array name="book_Title">
+        <item></item>
+    </string-array>
 
     //activity_feedback.xml
     <string name="feedbackPromptingText">Please do not hesitate to contact us by email (ENTER EMAIL ADDRESS). Or, feel free to share your concerns, suggestions, and feedback through the anonymous Google Form below.</string>
