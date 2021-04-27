@@ -42,6 +42,9 @@ public class InitialSurvey extends AppCompatActivity {
         setUpHyperLink();
     }
 
+    /**
+     * Sets up hyperlink for langQuestion
+     */
     private void setUpHyperLink() {
         TextView linkTextView = findViewById(R.id.langQuestion);
         linkTextView.setMovementMethod(LinkMovementMethod.getInstance());
