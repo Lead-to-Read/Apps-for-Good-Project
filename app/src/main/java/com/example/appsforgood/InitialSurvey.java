@@ -91,7 +91,7 @@ public class InitialSurvey extends AppCompatActivity {
             String bookAuthor = b.getAuthors().replaceAll("\\s", "");
             Log.v("Author", "Book author: " + bookAuthor);
             double authorSubRating;
-            if (bookAuthor.contains(userAuthorNew)) {
+            if (bookAuthor.toLowerCase().contains(userAuthorNew.toLowerCase())) {
                 authorSubRating = 1;
             } else {
                 authorSubRating = 0;
@@ -247,7 +247,8 @@ public class InitialSurvey extends AppCompatActivity {
     }
 
     public void popularityScore() {
-        for (int index = 0; index < correctLangBooks.size(); index++) {
+        int index;
+        for (index = 0; index < correctLangBooks.size(); index++) {
             double bookPopularity = correctLangBooks.get(index).getRatingsCount();
             double subPopularityRating;
             /**if (bookPopularity > 12327.75) { //12327.75 is the minimum to be an outlier in the dataset, which was skewed right
@@ -269,7 +270,7 @@ public class InitialSurvey extends AppCompatActivity {
             bookScores.set(index, currentTotalRating + popularityRating);
         }
         for (double score : bookScores) {
-            Log.v("Score", "" + score);
+            Log.v("Score", correctLangBooks.get(bookScores.indexOf(score)).getTitle() + " " + score);
         }
     }
 
