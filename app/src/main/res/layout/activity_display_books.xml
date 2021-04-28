@@ -20,212 +20,295 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/displayBooksRecyclerView"
+    <HorizontalScrollView
+        android:id="@+id/scrollHorizontalTable"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="10dp"
+        android:fadeScrollbars="false"
+        android:scrollbarSize="15dp"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:scrollbarFadeDuration="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <TableLayout
+            android:id="@+id/displayTable"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:stretchColumns="0,1,2">
 
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:stretchColumns="0,1,2"
-        android:gravity="center">
-
-        <TableRow
-            android:background="#FFFFFF"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_margin="1dp"
-            android:layout_weight="1"
-            >
             <TableRow
-                android:background="#000000"
+                android:id="@+id/titleRow"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
                 android:layout_margin="1dp"
                 android:layout_weight="1"
-                >
 
+                android:background="#000000">
 
+                <TextView
+                    android:id="@+id/titleLabel"
+                    android:layout_width="73dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_margin="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text="@string/titleLabelText"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold" />
 
+                <TextView
+                    android:id="@+id/authorLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    android:layout_margin="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text="@string/authorLabelText"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/isbnLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_column="2"
+                    android:layout_margin="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text="@string/isbnLabelText"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold" />
             </TableRow>
-        </TableRow>
-        <TableRow
-            android:background="#000000"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_margin="1dp"
-            android:layout_weight="1"
 
-            >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text=" Date "
+            <TableRow
+                android:id="@+id/suggestion1"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
                 android:layout_margin="1dp"
-                android:layout_column="0"
-                android:background="#FFFFFF"
-                android:textStyle="bold"
-                android:gravity="center"
-                />
+                android:layout_weight="1"
+                android:background="#000000">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Miles "
+                <TextView
+                    android:id="@+id/suggestion1Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_margin="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/suggestion1Author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    android:layout_margin="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/suggestion1ISBN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_column="2"
+                    android:layout_margin="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/suggestion2"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
                 android:layout_margin="1dp"
-                android:layout_column="1"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:textStyle="bold"
-                />
+                android:layout_weight="1"
+                android:background="#000000">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Calories"
+                <TextView
+                    android:id="@+id/suggestion2Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text=" Text"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/suggestion2Author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text=" Text"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/suggestion2ISBN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_column="2"
+                    android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text=" Text"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/suggestion3"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:layout_column="2"
-                />
-        </TableRow>
+                android:layout_weight="1"
+                android:background="#000000">
 
-        <TableRow
-            android:background="#000000"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_margin="1dp"
-            android:layout_weight="1"
-            >
+                <TextView
+                    android:id="@+id/suggestion3Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text=" Text"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text=" Text"
+                <TextView
+                    android:id="@+id/suggestion3Author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text=" Text"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/suggestion3ISBN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_column="2"
+                    android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text=" Text"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/suggestion4"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
                 android:layout_margin="1dp"
-                android:layout_column="0"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                />
+                android:layout_weight="1"
+                android:background="#000000">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text=" Text"
+                <TextView
+                    android:id="@+id/suggestion4Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text=" Text"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/suggestion4Author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text=" Text"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/suggestion4ISBN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_column="2"
+                    android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text=" Text"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/suggestion5"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
                 android:layout_margin="1dp"
-                android:layout_column="1"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                />
+                android:layout_weight="1"
+                android:background="#000000">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text=" Text"
-                android:layout_margin="1dp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:layout_column="2" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/suggestion5Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text=" Text"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
+                <TextView
+                    android:id="@+id/suggestion5Author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text=" Text"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TableRow
-            android:background="#000000"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_margin="1dp"
-            android:layout_weight="1"
-            >
+                <TextView
+                    android:id="@+id/suggestion5ISBN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_column="2"
+                    android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text=" Text"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </TableRow>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text=" Text"
-                android:layout_margin="1dp"
-                android:layout_column="0"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                />
+        </TableLayout>
+    </HorizontalScrollView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text=" Text"
-                android:layout_margin="1dp"
-                android:layout_column="1"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text=" Text"
-                android:layout_margin="1dp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:layout_column="2" />
-        </TableRow>
-
-        <TableRow
-            android:background="#000000"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_margin="1dp"
-            android:layout_weight="1"
-            >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text=" Text"
-                android:layout_margin="1dp"
-                android:layout_column="0"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text=" Text"
-                android:layout_margin="1dp"
-                android:layout_column="1"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text=" Text"
-                android:layout_margin="1dp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:layout_column="2" />
-        </TableRow>
-
-    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

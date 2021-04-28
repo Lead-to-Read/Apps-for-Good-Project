@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class DisplayBooks extends AppCompatActivity {
 
@@ -16,9 +19,18 @@ public class DisplayBooks extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_books);
         getHighest();
+
+        TextView title1 = (TextView) findViewById(R.id.suggestion1Title);
+        title1.setText(getHighest().getTitle());
+
+        TextView author1 = (TextView) findViewById(R.id.suggestion1Author);
+        author1.setText(getHighest().getAuthors());
+
+        TextView isbn1 = (TextView) findViewById(R.id.suggestion1ISBN);
+        isbn1.setText(getHighest().getISBN13());
     }
 
-    public void getHighest () {
+    public Book getHighest () {
         double maxScore = InitialSurvey.getBookScores().get(0);
         //int i = 0;
         int correctIndex = 0;
@@ -28,8 +40,11 @@ public class DisplayBooks extends AppCompatActivity {
                 correctIndex = i;
             }
         }
+
         Log.v("Highest Scoring Book","Index " + correctIndex); //~37
         Log.v("Highest Scoring Book", "Equals" + "correctLangBooks size:" + InitialSurvey.getCorrectLangBooks().size() + "bookScores size: " + InitialSurvey.getBookScores().size()); //46 if eng is chosen
         Log.v("Highest Scoring Book", "Highest Scoring Book" + InitialSurvey.getCorrectLangBooks().get(correctIndex).getTitle() + maxScore);
+        ArrayList<Book> correctLangBooks = InitialSurvey.getCorrectLangBooks();
+        return correctLangBooks.get(correctIndex);
     }
 }

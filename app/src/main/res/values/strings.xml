@@ -34,6 +34,9 @@
     <string-array name="book_Title">
         <item></item>
     </string-array>
+    <string name="titleLabelText">Title</string>
+    <string name="authorLabelText">Author(s)</string>
+    <string name="isbnLabelText">ISBN</string>
 
     //activity_feedback.xml
     <string name="feedbackPromptingText">Please do not hesitate to contact us by email (ENTER EMAIL ADDRESS). Or, feel free to share your concerns, suggestions, and feedback through the anonymous Google Form below.</string>
