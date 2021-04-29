@@ -6,7 +6,8 @@ import java.util.ArrayList;
 
 public class Manager extends Application {
 
-    static ArrayList<Book> books = new ArrayList<Book>();
+    private static ArrayList<Book> books = new ArrayList<Book>();
+    private static ArrayList<BookScores> bookScores;
 
     /**
      * Gets arrayList of books
@@ -22,5 +23,10 @@ public class Manager extends Application {
      */
     public void addBook(Book book) {
         books.add(book);
+    }
+
+    public void addBookScore(Book initBook, double initScore) {
+        BookScores bookScoreNew = new BookScores(initBook, initScore);
+        bookScores.add(bookScoreNew);
     }
 }
