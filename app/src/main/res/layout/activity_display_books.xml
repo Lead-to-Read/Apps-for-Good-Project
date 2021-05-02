@@ -57,8 +57,8 @@
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:layout_margin="1dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
+                    android:paddingLeft="100dp"
+                    android:paddingRight="100dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
                     android:text="@string/titleLabelText"
@@ -71,8 +71,8 @@
                     android:layout_height="match_parent"
                     android:layout_column="1"
                     android:layout_margin="1dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
+                    android:paddingLeft="100dp"
+                    android:paddingRight="100dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
                     android:text="@string/authorLabelText"
@@ -85,8 +85,8 @@
                     android:layout_height="match_parent"
                     android:layout_column="2"
                     android:layout_margin="1dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
+                    android:paddingLeft="100dp"
+                    android:paddingRight="100dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
                     android:text="@string/isbnLabelText"
@@ -108,8 +108,8 @@
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:layout_margin="1dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
+                    android:paddingLeft="100dp"
+                    android:paddingRight="100dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -120,8 +120,8 @@
                     android:layout_height="match_parent"
                     android:layout_column="1"
                     android:layout_margin="1dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
+                    android:paddingLeft="100dp"
+                    android:paddingRight="100dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -132,8 +132,8 @@
                     android:layout_height="match_parent"
                     android:layout_column="2"
                     android:layout_margin="1dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
+                    android:paddingLeft="100dp"
+                    android:paddingRight="100dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -156,7 +156,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text=" Text"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
@@ -167,7 +166,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text=" Text"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
@@ -178,7 +176,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text=" Text"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -198,7 +195,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text=" Text"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
@@ -209,7 +205,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text=" Text"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
@@ -220,7 +215,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text=" Text"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -240,7 +234,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text=" Text"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
@@ -251,7 +244,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text=" Text"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
@@ -262,7 +254,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text=" Text"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
@@ -282,7 +273,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text=" Text"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
@@ -293,7 +283,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text=" Text"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
@@ -304,7 +293,6 @@
                     android:layout_margin="1dp"
                     android:background="#FFFFFF"
                     android:gravity="center"
-                    android:text=" Text"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
