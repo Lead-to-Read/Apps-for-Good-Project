@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
@@ -15,7 +16,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 
@@ -32,6 +36,54 @@ public class InitialSurvey extends AppCompatActivity {
     private int lowerPubYear;
     private int upperPubYear;
 
+
+    ToggleButton saveDataToggleButton;
+    EditText langText;
+    EditText authorText;
+    ProgressBar authorUserRanking;
+    ProgressBar lengthUserRanking;
+    ProgressBar pubDateRanking;
+    ProgressBar avgRatingUserRanking;
+    ProgressBar popRanking;
+    RadioButton shortButton;
+    RadioButton mediumButton;
+    RadioButton longButton;
+    RadioButton dateLate1900sButton;
+    RadioButton date2000sButton;
+
+    public static final String SHARED_PREFERENCES= "sharedPreferences";
+    public static final String LANG_CODE= "langCode";
+    public static final String AUTHOR = "favAuthor";
+    public static final String AUTHOR_RATING = "authorRating";
+    //public static final String LENGTH = "length";
+    public static final String SHORT_LENGTH = "shortLength";
+    public static final String MEDIUM_LENGTH = "mediumLength";
+    public static final String LONG_LENGTH = "longLength";
+    public static final String LENGTH_RATING = "lengthRating";
+    public static final String DATE_1900s = "date1900s";
+    public static final String DATE_2000s = "date2000s";
+    public static final String DATE_RATING = "dateRating";
+    public static final String AVG_RATING = "avgRating";
+    public static final String POPULARITY_RATING = "popularityRating";
+    public static final String SAVE_DATA_TOGGLE = "saveDataToggle";
+
+
+    private String langCode;
+    private String author;
+    private int authorRating;
+    //private String length;
+    private boolean shortLength;
+    private boolean mediumLength;
+    private boolean longLength;
+    private int lengthRating;
+    //private String date;
+    private boolean date1900s;
+    private boolean date2000s;
+    private int dateRating;
+    private int avgRating;
+    private int popularityRating;
+    private boolean saveDataToggleBool;
+
     @Override
     /**
      * Displays activity from activity_initial_survey.xml
@@ -40,7 +92,86 @@ public class InitialSurvey extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_survey);
+
+        Log.v("SHAREDPREF","Initial Survey runs");
+        langText = (EditText) findViewById(R.id.langEditText);
+        authorText = findViewById(R.id.authorEditText);
+        authorUserRanking = findViewById(R.id.authorRankingSlider);
+        lengthUserRanking = findViewById(R.id.bookLengthRankingSlider);
+        pubDateRanking = findViewById(R.id.publicationDateRankingSlider);
+        avgRatingUserRanking = findViewById(R.id.avgRatingRankingSlider);
+        popRanking = findViewById(R.id.popularityRankingSlider);
+        shortButton = findViewById(R.id.shortLengthButton);
+        mediumButton = findViewById(R.id.mediumLengthButton);
+        longButton = findViewById(R.id.longLengthButton);
+        dateLate1900sButton = findViewById(R.id.late1900sOption);
+        date2000sButton = findViewById(R.id.modern2000sOption);
+        saveDataToggleButton = findViewById(R.id.saveDataToggle);
+
         setUpHyperLink();
+        loadData();
+        updateViews();
+    }
+
+    //If saveData is checked and continue is clicked...
+    public void saveData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString(LANG_CODE, langText.getText().toString());
+        editor.putString(AUTHOR, authorText.getText().toString());
+        editor.putInt(AUTHOR_RATING, authorUserRanking.getProgress());
+        editor.putBoolean(SHORT_LENGTH, shortButton.isChecked());
+        editor.putBoolean(MEDIUM_LENGTH, mediumButton.isChecked());
+        editor.putBoolean(LONG_LENGTH, longButton.isChecked());
+        editor.putInt(LENGTH_RATING, lengthUserRanking.getProgress());
+        editor.putBoolean(DATE_1900s, dateLate1900sButton.isChecked());
+        editor.putBoolean(DATE_2000s, date2000sButton.isChecked());
+        editor.putInt(DATE_RATING, pubDateRanking.getProgress());
+        editor.putInt(AVG_RATING, avgRatingUserRanking.getProgress());
+        editor.putInt(POPULARITY_RATING, popRanking.getProgress());
+        editor.putBoolean(SAVE_DATA_TOGGLE, saveDataToggleButton.isChecked());
+
+        editor.apply();
+        Log.v("Shared preferences", "Data saved");
+    }
+
+    public void loadData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
+
+        langCode = sharedPreferences.getString(LANG_CODE,"");
+        Log.v("Shared preferences","Lang: " + langCode);
+        author = sharedPreferences.getString(AUTHOR,"");
+        Log.v("Shared preferences","Author: " + author);
+        authorRating = sharedPreferences.getInt(AUTHOR_RATING,0);
+        //length = sharedPreferences.getString(LENGTH,"");
+        shortLength = sharedPreferences.getBoolean(SHORT_LENGTH, false);
+        mediumLength = sharedPreferences.getBoolean(MEDIUM_LENGTH, false);
+        longLength = sharedPreferences.getBoolean(LONG_LENGTH, false);
+        lengthRating = sharedPreferences.getInt(LENGTH_RATING,0);
+        //date = sharedPreferences.getString(DATE,"");
+        date1900s = sharedPreferences.getBoolean(DATE_1900s, false);
+        date2000s = sharedPreferences.getBoolean(DATE_2000s, false);
+        dateRating = sharedPreferences.getInt(DATE_RATING,0);
+        avgRating = sharedPreferences.getInt(AVG_RATING,0);
+        popularityRating = sharedPreferences.getInt(POPULARITY_RATING,0);
+        saveDataToggleBool = sharedPreferences.getBoolean(SAVE_DATA_TOGGLE, false);
+    }
+
+    public void updateViews() {
+        langText.setText(langCode);
+        authorText.setText(author);
+        authorUserRanking.setProgress(authorRating);
+        shortButton.setChecked(shortLength);
+        mediumButton.setChecked(mediumLength);
+        longButton.setChecked(longLength);
+        lengthUserRanking.setProgress(lengthRating);
+        //pubDateRanking.setProgress(dateRating);
+        dateLate1900sButton.setChecked(date1900s);
+        date2000sButton.setChecked(date2000s);
+        avgRatingUserRanking.setProgress(avgRating);
+        popRanking.setProgress(popularityRating);
+        saveDataToggleButton.setChecked(saveDataToggleBool);
     }
 
     /**
@@ -64,15 +195,18 @@ public class InitialSurvey extends AppCompatActivity {
         ratingScore();
         popularityScore();
         getHighest();
+        if (saveDataToggleButton.isChecked()) {
+            saveData(); }
         Intent start = new Intent(this, DisplayBooks.class);
         startActivity(start);
+        //saveDataToggleButton = (ToggleButton) findViewById(R.id.saveDataToggle);
     }
 
     /**
      * Filters out books that are not the language specified by the user in the initial survey
      */
     public void langFilter() {
-        EditText langText = findViewById(R.id.langEditText);
+        //EditText langText = findViewById(R.id.langEditText);
         String lang = langText.getText().toString();
         Log.v("Lang", "User Language: " + lang);
 
@@ -93,7 +227,7 @@ public class InitialSurvey extends AppCompatActivity {
      * Assigns a rating based on the author of each book and the author/importance entered by the user
      */
     public void authorScore() {
-        EditText authorText = findViewById(R.id.authorEditText);
+        //EditText authorText = findViewById(R.id.authorEditText);
         String userAuthor = authorText.getText().toString();
         Log.v("Author", "Preferred author: " + userAuthor);
         String userAuthorNew = userAuthor.replaceAll("\\s","");
@@ -112,7 +246,7 @@ public class InitialSurvey extends AppCompatActivity {
             Log.v("Author", "Subrating: " + authorSubRating);
 
             //Get user author rating from slider and multiply by authorSubRating
-            ProgressBar authorUserRanking = findViewById(R.id.authorRankingSlider);
+            //ProgressBar authorUserRanking = findViewById(R.id.authorRankingSlider);
             int authorUserRankingInt = authorUserRanking.getProgress();
             Log.v("Author", "Subrating: " + authorUserRankingInt);
             double authorRating = authorSubRating * authorUserRankingInt;
@@ -175,7 +309,7 @@ public class InitialSurvey extends AppCompatActivity {
                 subLengthRating = 0;
             }
             Log.v("Check", "Length" + subLengthRating);
-            ProgressBar lengthUserRanking = findViewById(R.id.bookLengthRankingSlider);
+            //ProgressBar lengthUserRanking = findViewById(R.id.bookLengthRankingSlider);
             int lengthUserRankingInt = lengthUserRanking.getProgress();
             double lengthRating = subLengthRating * lengthUserRankingInt;
             Log.v("CheckA", "Length" + subLengthRating);
@@ -229,7 +363,7 @@ public class InitialSurvey extends AppCompatActivity {
                     subTimeRating = 0;
                 }
                 Log.v("PubCheck", "Subrating of current book" + correctLangBooks.get(index).getBook().getTitle() + subTimeRating);
-                ProgressBar pubDateRanking = findViewById(R.id.publicationDateRankingSlider);
+                //ProgressBar pubDateRanking = findViewById(R.id.publicationDateRankingSlider);
                 int pubDateUserRanking = pubDateRanking.getProgress();
                 double pubRanking = (subTimeRating * pubDateUserRanking);
                 Log.v("PubCheck", "Final pub rating of current book" + correctLangBooks.get(index).getBook().getTitle() + pubRanking);
@@ -247,7 +381,7 @@ public class InitialSurvey extends AppCompatActivity {
             double bookRating = correctLangBooks.get(index).getBook().getAvgRating();
             double subAvgRatingRating = (bookRating / 3.934) + 0.35 * (bookRating - 3.934); // 3.934 is the mean rating of all books in the dataset, while 0.35 is the standard deviation. The standard deviation is multiplied instead of divided since it's less than 1
             Log.v("AvgRating", "" + subAvgRatingRating);
-            ProgressBar avgRatingUserRanking = findViewById(R.id.avgRatingRankingSlider);
+            //ProgressBar avgRatingUserRanking = findViewById(R.id.avgRatingRankingSlider);
             int avgRatingUserRankingInt = avgRatingUserRanking.getProgress();
             double avgRatingRating = subAvgRatingRating * avgRatingUserRankingInt;
             Log.v("Rating Score", "" + avgRatingRating);
@@ -275,7 +409,7 @@ public class InitialSurvey extends AppCompatActivity {
                 subPopularityRating = bookPopularity / 4993.5;
             }
             Log.v("Popularity", "subPopRanking " + subPopularityRating);
-            ProgressBar popRanking = findViewById(R.id.popularityRankingSlider);
+            //ProgressBar popRanking = findViewById(R.id.popularityRankingSlider);
             int popRankingInt = popRanking.getProgress();
             double popularityRating = subPopularityRating * popRankingInt;
             Log.v("Popularity", "Popularity final score " + popularityRating);
@@ -309,7 +443,6 @@ public class InitialSurvey extends AppCompatActivity {
     //public static ArrayList<Double> getBookScores() {
         //return bookScores;
     //}
-
 
 }
 
