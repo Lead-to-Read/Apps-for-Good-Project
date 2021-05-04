@@ -1,4 +1,4 @@
-package com.example.appsforgood;
+ package com.example.appsforgood;
 
 public class Book {
 
@@ -113,5 +113,37 @@ public class Book {
      */
     public int getYear() {
         return year;
+    }
+
+    public void setTitle(String newTitle) {
+        title = newTitle;
+    }
+
+    public void setAuthors(String newAuthors) {
+        authors = newAuthors;
+    }
+
+    public void setAvgRating(double newAvgRating) {
+        avgRating = newAvgRating;
+    }
+
+    public void setIsbn13(String newIsbn13) {
+        isbn13 = newIsbn13;
+    }
+
+    public void setLanguageCode(String newLanguageCode) {
+        languageCode = newLanguageCode;
+    }
+
+    public void setNumPages(int newNumPages) {
+        numPages = newNumPages;
+    }
+
+    public void setRatingsCount(int newRatingsCount) {
+        ratingsCount = newRatingsCount;
+    }
+
+    public void setYear(int newYear) {
+        year = newYear;
     }
 }

@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class DisplayBooks extends AppCompatActivity {
+public class  DisplayBooks extends AppCompatActivity {
 
     //ArrayList<BookScores> correctLangBooks2;
 

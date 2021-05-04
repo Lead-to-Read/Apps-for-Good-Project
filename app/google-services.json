@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "80589617188",
+    "project_id": "booksuggestionapp",
+    "storage_bucket": "booksuggestionapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:80589617188:android:b4f9a3e6ed3bb68bde00b1",
+        "android_client_info": {
+          "package_name": "com.example.appsforgood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "80589617188-upjsj7c6glqp4sm4ktq3et8d1lgpsb75.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy7Itc2LoKoxjhR14sPgGavGYb3DLlBy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "80589617188-upjsj7c6glqp4sm4ktq3et8d1lgpsb75.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
