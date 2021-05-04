@@ -1,4 +1,5 @@
 <resources>
+    //activity_initial_survey.xml
     <string name="app_name">Apps for Good</string>
     <string name="homePageText">APP NAME</string>
     <string name="feedbackText">Press to give feedback</string>
@@ -27,6 +28,7 @@
     <string name="initialSurveyTitleText">Initial Survey</string>
 
     <string name="beginClickButton">Press to Get Book Suggestions</string>
+    <string name="saveDataToggleDescriptionText">Toggle to save initial survey data.</string>
     <string name="continueButtonText">Continue</string>
 
     //activity_display_books.xml
