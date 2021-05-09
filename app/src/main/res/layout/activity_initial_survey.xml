@@ -171,6 +171,14 @@
                 android:layout_height="wrap_content">
 
                 <RadioButton
+                    android:id="@+id/early1900sOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="early1900sScore"
+                    android:text="@string/early1900sOptionText"
+                    android:textSize="12sp" />
+
+                <RadioButton
                     android:id="@+id/late1900sOption"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

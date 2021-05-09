@@ -1,7 +1,7 @@
 <resources>
     //activity_initial_survey.xml
     <string name="app_name">Apps for Good</string>
-    <string name="homePageText">APP NAME</string>
+    <string name="homePageText">NextRead</string>
     <string name="feedbackText">Press to give feedback</string>
     <string name="logoContentDescriptionText">APP LOGO</string>
     <string name="langQText">What language (as a <a href="http://loc.gov/standards/iso639-2/php/code_list.php">Alpha-3/ISO 639-2 Language Code</a>) should the book be written in?</string>
@@ -21,6 +21,7 @@
     <string name="shortLengthOptionText">Short: Less Than 200 Pages</string>
     <string name="mediumLengthOptionText">Medium: 200 to 500 Pages</string>
     <string name="longLengthOptionText">Long: Over 500 Pages</string>
+    <string name="early1900sOptionText">Early 1900s: 1900-1950</string>
     <string name="late1900sOptionText">Late 1900s: 1950-2000</string>
     <string name="modern2000sOptionText">2000s</string>
     <string name="button" />

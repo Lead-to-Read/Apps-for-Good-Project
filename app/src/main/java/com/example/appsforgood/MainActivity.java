@@ -66,12 +66,12 @@ public class MainActivity extends AppCompatActivity {
 
         final Manager aManager = (Manager) getApplicationContext();
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        /**FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference entry = database.getReference("books");
 
         for(int a = 0; a < aManager.getBooks().size(); a++) {
             entry.push().setValue(aManager.getBooks().get(a));
-        }
+        }**/
     }
 
     /**

@@ -93,7 +93,7 @@ public class InitialSurvey extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_survey);
 
-        Log.v("SHAREDPREF","Initial Survey runs");
+        //Log.v("SHAREDPREF","Initial Survey runs");
         langText = (EditText) findViewById(R.id.langEditText);
         authorText = findViewById(R.id.authorEditText);
         authorUserRanking = findViewById(R.id.authorRankingSlider);
@@ -133,16 +133,16 @@ public class InitialSurvey extends AppCompatActivity {
         editor.putBoolean(SAVE_DATA_TOGGLE, saveDataToggleButton.isChecked());
 
         editor.apply();
-        Log.v("Shared preferences", "Data saved");
+        //Log.v("Shared preferences", "Data saved");
     }
 
     public void loadData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
 
         langCode = sharedPreferences.getString(LANG_CODE,"");
-        Log.v("Shared preferences","Lang: " + langCode);
+        //Log.v("Shared preferences","Lang: " + langCode);
         author = sharedPreferences.getString(AUTHOR,"");
-        Log.v("Shared preferences","Author: " + author);
+        //Log.v("Shared preferences","Author: " + author);
         authorRating = sharedPreferences.getInt(AUTHOR_RATING,0);
         //length = sharedPreferences.getString(LENGTH,"");
         shortLength = sharedPreferences.getBoolean(SHORT_LENGTH, false);
@@ -208,18 +208,18 @@ public class InitialSurvey extends AppCompatActivity {
     public void langFilter() {
         //EditText langText = findViewById(R.id.langEditText);
         String lang = langText.getText().toString();
-        Log.v("Lang", "User Language: " + lang);
+        //Log.v("Lang", "User Language: " + lang);
 
         for (Book b: Manager.getBooks()) {
-            Log.v("Book", "All Book Titles: " + b.getTitle());
+            //Log.v("Book", "All Book Titles: " + b.getTitle());
             if (b.getLanguage().equalsIgnoreCase(lang)) {
                 BookScores currentBook = new BookScores(b, 0.0);
                 correctLangBooks.add(currentBook);
-                Log.v("Book", "Book w/ Correct Language: " + b.getTitle());
+                //Log.v("Book", "Book w/ Correct Language: " + b.getTitle());
             }
         }
         for (BookScores b: correctLangBooks) {
-            Log.v("Book","Book in correctLangBooks" + b.getBook().getTitle());
+            //Log.v("Book","Book in correctLangBooks" + b.getBook().getTitle());
         }
     }
 
@@ -229,13 +229,13 @@ public class InitialSurvey extends AppCompatActivity {
     public void authorScore() {
         //EditText authorText = findViewById(R.id.authorEditText);
         String userAuthor = authorText.getText().toString();
-        Log.v("Author", "Preferred author: " + userAuthor);
+        //Log.v("Author", "Preferred author: " + userAuthor);
         String userAuthorNew = userAuthor.replaceAll("\\s","");
-        Log.v("Author", "Updated preferred author: " + userAuthorNew);
+        //Log.v("Author", "Updated preferred author: " + userAuthorNew);
 
         for (BookScores b : correctLangBooks) {
             String bookAuthor = b.getBook().getAuthors().replaceAll("\\s", "");
-            Log.v("Author", "Book author: " + bookAuthor);
+            //Log.v("Author", "Book author: " + bookAuthor);
             double authorSubRating;
             //.contains() is normally case-sensitive.
             if (bookAuthor.toLowerCase().contains(userAuthorNew.toLowerCase())) {
@@ -243,15 +243,15 @@ public class InitialSurvey extends AppCompatActivity {
             } else {
                 authorSubRating = 0;
             }
-            Log.v("Author", "Subrating: " + authorSubRating);
+            //Log.v("Author", "Subrating: " + authorSubRating);
 
             //Get user author rating from slider and multiply by authorSubRating
             //ProgressBar authorUserRanking = findViewById(R.id.authorRankingSlider);
             int authorUserRankingInt = authorUserRanking.getProgress();
-            Log.v("Author", "Subrating: " + authorUserRankingInt);
+            //Log.v("Author", "Subrating: " + authorUserRankingInt);
             double authorRating = authorSubRating * authorUserRankingInt;
             b.setScore(authorRating);
-            Log.v("Author", "Author Score: " + authorRating);
+            //Log.v("Author", "Author Score: " + authorRating);
         }
     }
 
@@ -263,7 +263,7 @@ public class InitialSurvey extends AppCompatActivity {
         preferredLength = "Short";
         lowerPageBound = 0;
         upperPageBound = 200;
-        Log.v("Check", "Length " + preferredLength);
+        //Log.v("Check", "Length " + preferredLength);
     }
 
     /**
@@ -274,7 +274,7 @@ public class InitialSurvey extends AppCompatActivity {
         preferredLength = "Medium";
         lowerPageBound = 201;
         upperPageBound = 500;
-        Log.v("Check", "Length " + preferredLength);
+        //Log.v("Check", "Length " + preferredLength);
     }
 
     /**
@@ -285,18 +285,18 @@ public class InitialSurvey extends AppCompatActivity {
         preferredLength = "Long";
         lowerPageBound = 501;
         upperPageBound = 100000;// Safe upper bound for largest book
-        Log.v("Check", "Length " + preferredLength);
+        //Log.v("Check", "Length " + preferredLength);
     }
 
     /**
      * Assigns a rating to each book based on its length using the preferences specified by the user in the initial survey
      */
     public void lengthScore() {
-        Log.v("Check", "Length Books " + correctLangBooks.size());
+        //Log.v("Check", "Length Books " + correctLangBooks.size());
         for (int index = 0; index < correctLangBooks.size(); index++) {
             int currentPageLength = correctLangBooks.get(index).getBook().getNumPages();
             double subLengthRating = 0;
-            Log.v("CheckD", "Length" + currentPageLength);
+            //Log.v("CheckD", "Length" + currentPageLength);
             if (lowerPageBound <= currentPageLength && currentPageLength <= upperPageBound) {
                 subLengthRating = 1;
             } else if (lowerPageBound - 25 <= currentPageLength && currentPageLength <= upperPageBound + 25) {
@@ -308,26 +308,29 @@ public class InitialSurvey extends AppCompatActivity {
             } else {
                 subLengthRating = 0;
             }
-            Log.v("Check", "Length" + subLengthRating);
+            //Log.v("Check", "Length" + subLengthRating);
             //ProgressBar lengthUserRanking = findViewById(R.id.bookLengthRankingSlider);
             int lengthUserRankingInt = lengthUserRanking.getProgress();
             double lengthRating = subLengthRating * lengthUserRankingInt;
-            Log.v("CheckA", "Length" + subLengthRating);
+            //Log.v("CheckA", "Length" + subLengthRating);
             double currentTotalRating = correctLangBooks.get(index).getScore();
             correctLangBooks.get(index).setScore(currentTotalRating + lengthRating);
         }
-        Log.v("Check", "LengthR");
+        //Log.v("Check", "LengthR");
 	}
 
-        /**
-         * Sets the page bounds for a short book (when user clicks short button)
-         * @param v used to set page bounds for short books
-         */
+        public void early1900sScore(View v) {
+            preferredPubTime = "early 1900s";
+            lowerPubYear = 1900;
+            upperPubYear = 1950;
+            //Log.v("PubCheck", "Publication Time " + preferredPubTime);
+        }
+
         public void late1900sScore(View v) {
             preferredPubTime = "late 1900s";
-            lowerPubYear = 1950;
+            lowerPubYear = 1951;
             upperPubYear = 2000;
-            Log.v("PubCheck", "Publication Time " + preferredPubTime);
+            //Log.v("PubCheck", "Publication Time " + preferredPubTime);
         }
 
         /**
@@ -338,7 +341,7 @@ public class InitialSurvey extends AppCompatActivity {
             preferredPubTime = "2000s";
             lowerPubYear = 2001;
             upperPubYear = 3000; //Safe upper publication year bound
-            Log.v("PubCheck", "Publication Time " + preferredPubTime);
+            //Log.v("PubCheck", "Publication Time " + preferredPubTime);
         }
 
 
@@ -348,7 +351,7 @@ public class InitialSurvey extends AppCompatActivity {
         public void publicationDateScore() {
             for (int index = 0; index < correctLangBooks.size(); index++) {
                 int currentPubYear = correctLangBooks.get(index).getBook().getYear();
-                Log.v("PubCheck", "Publication of current book" + currentPubYear);
+                //Log.v("PubCheck", "Publication of current book" + currentPubYear);
                 double subTimeRating = 0;
 
                 if (lowerPubYear <= currentPubYear && currentPubYear <= upperPubYear) {
@@ -362,14 +365,14 @@ public class InitialSurvey extends AppCompatActivity {
                 } else {
                     subTimeRating = 0;
                 }
-                Log.v("PubCheck", "Subrating of current book" + correctLangBooks.get(index).getBook().getTitle() + subTimeRating);
+                //Log.v("PubCheck", "Subrating of current book" + correctLangBooks.get(index).getBook().getTitle() + subTimeRating);
                 //ProgressBar pubDateRanking = findViewById(R.id.publicationDateRankingSlider);
                 int pubDateUserRanking = pubDateRanking.getProgress();
                 double pubRanking = (subTimeRating * pubDateUserRanking);
-                Log.v("PubCheck", "Final pub rating of current book" + correctLangBooks.get(index).getBook().getTitle() + pubRanking);
+                //Log.v("PubCheck", "Final pub rating of current book" + correctLangBooks.get(index).getBook().getTitle() + pubRanking);
                 double currentTotalRating = correctLangBooks.get(index).getScore();
                 correctLangBooks.get(index).setScore(currentTotalRating + pubRanking);
-                Log.v("PubCheck", "Final rating of current book" + correctLangBooks.get(index).getScore());
+                //Log.v("PubCheck", "Final rating of current book" + correctLangBooks.get(index).getScore());
             }
         }
 
@@ -380,17 +383,17 @@ public class InitialSurvey extends AppCompatActivity {
         for (int index = 0; index < correctLangBooks.size(); index++) {
             double bookRating = correctLangBooks.get(index).getBook().getAvgRating();
             double subAvgRatingRating = (bookRating / 3.934) + 0.35 * (bookRating - 3.934); // 3.934 is the mean rating of all books in the dataset, while 0.35 is the standard deviation. The standard deviation is multiplied instead of divided since it's less than 1
-            Log.v("AvgRating", "" + subAvgRatingRating);
+            //Log.v("AvgRating", "" + subAvgRatingRating);
             //ProgressBar avgRatingUserRanking = findViewById(R.id.avgRatingRankingSlider);
             int avgRatingUserRankingInt = avgRatingUserRanking.getProgress();
             double avgRatingRating = subAvgRatingRating * avgRatingUserRankingInt;
-            Log.v("Rating Score", "" + avgRatingRating);
+            //Log.v("Rating Score", "" + avgRatingRating);
             double currentTotalRating = correctLangBooks.get(index).getScore();
             correctLangBooks.get(index).setScore(currentTotalRating + avgRatingRating);
         }
-        for (BookScores book : correctLangBooks) {
-            Log.v("Score", "" + book.getScore());
-        }
+        //for (BookScores book : correctLangBooks) {
+            //Log.v("Score", "" + book.getScore());
+        //}
     }
 
     public void popularityScore() {
@@ -408,17 +411,17 @@ public class InitialSurvey extends AppCompatActivity {
                 //subPopularityRating = bookPopularity / 12327.75;
                 subPopularityRating = bookPopularity / 4993.5;
             }
-            Log.v("Popularity", "subPopRanking " + subPopularityRating);
+            //Log.v("Popularity", "subPopRanking " + subPopularityRating);
             //ProgressBar popRanking = findViewById(R.id.popularityRankingSlider);
             int popRankingInt = popRanking.getProgress();
             double popularityRating = subPopularityRating * popRankingInt;
-            Log.v("Popularity", "Popularity final score " + popularityRating);
+            //Log.v("Popularity", "Popularity final score " + popularityRating);
             double currentTotalRating = correctLangBooks.get(index).getScore();
             correctLangBooks.get(index).setScore(currentTotalRating + popularityRating);
         }
-        for (BookScores book : correctLangBooks) {
-            Log.v("Score", "" + book.getScore());
-        }
+        //for (BookScores book : correctLangBooks) {
+        //Log.v("Score", "" + book.getScore());
+        //}
     }
 
     public void getHighest () {
@@ -431,9 +434,9 @@ public class InitialSurvey extends AppCompatActivity {
                correctIndex = i;
            }
         }
-        Log.v("Highest Scoring Book","Index " + correctIndex); //~37
-        Log.v("Highest Scoring Book", "Equals" + "correctLangBooks size:" + correctLangBooks.size() + "bookScores size: " + correctLangBooks.size()); //46 if eng is chosen
-        Log.v("Highest Scoring Book", "Highest Scoring Book" + correctLangBooks.get(correctIndex).getBook().getTitle() + maxScore);
+        //Log.v("Highest Scoring Book","Index " + correctIndex); //~37
+        //Log.v("Highest Scoring Book", "Equals" + "correctLangBooks size:" + correctLangBooks.size() + "bookScores size: " + correctLangBooks.size()); //46 if eng is chosen
+        //Log.v("Highest Scoring Book", "Highest Scoring Book" + correctLangBooks.get(correctIndex).getBook().getTitle() + maxScore);
     }
 
     public static ArrayList<BookScores> getCorrectLangBooks() {
