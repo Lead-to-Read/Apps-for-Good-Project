@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         myRef.setValue("Hello, World!");
 
         // Read from the database
-        myRef.addValueEventListener(new ValueEventListener() {
+        /**myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
@@ -53,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
                 // Failed to read value
                 Log.w("MainActivity", "Failed to read value.", error.toException());
             }
-        });
+        });**/
+        setUpHyperLink();
     }
 
     /**
@@ -73,6 +74,12 @@ public class MainActivity extends AppCompatActivity {
             entry.push().setValue(aManager.getBooks().get(a));
         }**/
     }
+
+    private void setUpHyperLink() {
+        TextView linkTextView = findViewById(R.id.feedbackButton);
+        linkTextView.setMovementMethod(LinkMovementMethod.getInstance());
+    }
+
 
     /**
      * Extracts the year of a book from a full mm/dd/yyyy date
@@ -102,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
             while ((entry = provider.readLine()) != null) {
                 // Split by ',' (CSV file)
                 String[] attributes = entry.split(",");
-                Log.v("Reading", attributes[1] + " " + attributes[2]);
+                //Log.v("Reading", attributes[1] + " " + attributes[2]);
                 Book current = new Book(attributes[1], attributes[2], Double.parseDouble(attributes[3]), attributes[5], attributes[6], Integer.parseInt(attributes[7]), Integer.parseInt(attributes[8]), fixYear(attributes[10])); // all necessary factors
                 manager.addBook(current);
             }
@@ -120,15 +127,6 @@ public class MainActivity extends AppCompatActivity {
      */
     public void performStartSuggestions(View v) {
         Intent start = new Intent(this, InitialSurvey.class);
-        startActivity(start);
-    }
-
-    /**
-     * Starts feedback process
-     * @param v used to begin the feedback process
-     */
-    public void performFeedback(View v) {
-        Intent start = new Intent(this, Feedback.class);
         startActivity(start);
     }
 

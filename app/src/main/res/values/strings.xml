@@ -2,7 +2,7 @@
     //activity_initial_survey.xml
     <string name="app_name">Apps for Good</string>
     <string name="homePageText">NextRead</string>
-    <string name="feedbackText">Press to give feedback</string>
+    <string name="feedbackText"><a href="https://forms.gle/kRf4J389cLDB9b2UA">Press to give feedback</a></string>
     <string name="logoContentDescriptionText">APP LOGO</string>
     <string name="langQText">What language (as a <a href="http://loc.gov/standards/iso639-2/php/code_list.php">Alpha-3/ISO 639-2 Language Code</a>) should the book be written in?</string>
     <string name="authorQText">Who is your favorite author?</string>
