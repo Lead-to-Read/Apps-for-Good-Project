@@ -27,8 +27,10 @@
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:id="@+id/linearLayoutQuestions"
@@ -48,6 +50,7 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/cabin_medium"
                 android:text="@string/initialSurveyTitleText"
+                android:textColor="#09349D"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
@@ -58,6 +61,7 @@
                 android:fontFamily="@font/cabin_medium"
                 android:paddingTop="10sp"
                 android:text="@string/langQText"
+                android:textColor="#09349D"
                 android:textSize="14sp" />
 
             <EditText
@@ -66,8 +70,8 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:ems="10"
-                android:hint="@string/langOptionsText"
                 android:fontFamily="@font/cabin"
+                android:hint="@string/langOptionsText"
                 android:inputType="textPersonName"
                 android:singleLine="true"
                 android:textSize="15sp" />
@@ -76,9 +80,10 @@
                 android:id="@+id/authorQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/cabin_medium"
                 android:paddingTop="10sp"
                 android:text="@string/authorQText"
-                android:fontFamily="@font/cabin_medium"
+                android:textColor="#09349D"
                 android:textSize="14sp" />
 
             <EditText
@@ -87,8 +92,8 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:ems="10"
-                android:hint="@string/authorHintText"
                 android:fontFamily="@font/cabin"
+                android:hint="@string/authorHintText"
                 android:inputType="textPersonName"
                 android:textSize="15sp" />
 
@@ -96,9 +101,10 @@
                 android:id="@+id/authorRankingQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/cabin_medium"
                 android:paddingTop="10sp"
                 android:text="@string/authorRankingText"
-                android:fontFamily="@font/cabin_medium"
+                android:textColor="#09349D"
                 android:textSize="14sp" />
 
             <SeekBar
@@ -113,9 +119,10 @@
                 android:id="@+id/bookLengthQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/cabin_medium"
                 android:paddingTop="10sp"
                 android:text="@string/lengthQText"
-                android:fontFamily="@font/cabin_medium"
+                android:textColor="#09349D"
                 android:textSize="14sp" />
 
             <RadioGroup
@@ -127,27 +134,27 @@
                     android:id="@+id/shortLengthButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/cabin"
                     android:onClick="shortLengthScore"
                     android:text="@string/shortLengthOptionText"
-                    android:fontFamily="@font/cabin"
                     android:textSize="12sp" />
 
                 <RadioButton
                     android:id="@+id/mediumLengthButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/cabin"
                     android:onClick="mediumLengthScore"
                     android:text="@string/mediumLengthOptionText"
-                    android:fontFamily="@font/cabin"
                     android:textSize="12sp" />
 
                 <RadioButton
                     android:id="@+id/longLengthButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/cabin"
                     android:onClick="longLengthScore"
                     android:text="@string/longLengthOptionText"
-                    android:fontFamily="@font/cabin"
                     android:textSize="12sp" />
             </RadioGroup>
 
@@ -155,9 +162,10 @@
                 android:id="@+id/bookLengthRankingQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/cabin_medium"
                 android:paddingTop="10sp"
                 android:text="@string/lengthRankingText"
-                android:fontFamily="@font/cabin_medium"
+                android:textColor="#09349D"
                 android:textSize="14sp" />
 
             <SeekBar
@@ -172,9 +180,10 @@
                 android:id="@+id/publicationDateQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/cabin_medium"
                 android:paddingTop="10sp"
                 android:text="@string/dateQText"
-                android:fontFamily="@font/cabin_medium"
+                android:textColor="#09349D"
                 android:textSize="14sp" />
 
             <RadioGroup
@@ -186,27 +195,27 @@
                     android:id="@+id/early1900sOption"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/cabin"
                     android:onClick="early1900sScore"
                     android:text="@string/early1900sOptionText"
-                    android:fontFamily="@font/cabin"
                     android:textSize="12sp" />
 
                 <RadioButton
                     android:id="@+id/late1900sOption"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/cabin"
                     android:onClick="late1900sScore"
                     android:text="@string/late1900sOptionText"
-                    android:fontFamily="@font/cabin"
                     android:textSize="12sp" />
 
                 <RadioButton
                     android:id="@+id/modern2000sOption"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/cabin"
                     android:onClick="modern2000sScore"
                     android:text="@string/modern2000sOptionText"
-                    android:fontFamily="@font/cabin"
                     android:textSize="12sp" />
             </RadioGroup>
 
@@ -214,9 +223,10 @@
                 android:id="@+id/publicationDateRankingQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/cabin_medium"
                 android:paddingTop="10sp"
                 android:text="@string/dateRankingText"
-                android:fontFamily="@font/cabin_medium"
+                android:textColor="#09349D"
                 android:textSize="14sp" />
 
             <SeekBar
@@ -231,9 +241,10 @@
                 android:id="@+id/avgRatingRankingQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/cabin_medium"
                 android:paddingTop="10sp"
                 android:text="@string/avgRatingRankingText"
-                android:fontFamily="@font/cabin_medium"
+                android:textColor="#09349D"
                 android:textSize="14sp" />
 
             <SeekBar
@@ -248,8 +259,9 @@
                 android:id="@+id/popularityRankingQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/popularityRankingText"
                 android:fontFamily="@font/cabin_medium"
+                android:text="@string/popularityRankingText"
+                android:textColor="#09349D"
                 android:textSize="14sp" />
 
             <SeekBar
@@ -266,16 +278,17 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="25dp"
-                android:text="@string/saveDataToggleDescriptionText"
                 android:fontFamily="@font/cabin_medium"
+                android:text="@string/saveDataToggleDescriptionText"
+                android:textColor="#09349D"
                 android:textSize="14sp" />
 
             <ToggleButton
                 android:id="@+id/saveDataToggle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/cabin_medium"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/cabin_medium" />
 
             <Button
                 android:id="@+id/continueButton"
@@ -283,9 +296,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="60dp"
                 android:layout_marginBottom="20dp"
+                android:backgroundTint="#30A5FF"
+                android:fontFamily="@font/cabin_medium"
                 android:onClick="onContinueClick"
                 android:text="@string/continueButtonText"
-                android:fontFamily="@font/cabin_medium"
                 android:textSize="20sp" />
 
         </LinearLayout>

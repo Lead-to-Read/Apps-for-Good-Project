@@ -12,8 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/bookSuggestionsTitleText"
         android:fontFamily="@font/cabin_medium"
+        android:text="@string/bookSuggestionsTitleText"
+        android:textColor="#09349D"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,13 +58,14 @@
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/cabin_medium"
+                    android:gravity="center"
                     android:paddingLeft="100dp"
                     android:paddingRight="100dp"
-                    android:background="#FFFFFF"
-                    android:gravity="center"
                     android:text="@string/titleLabelText"
-                    android:fontFamily="@font/cabin_medium"
                     android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#09349D"
                     android:textStyle="bold" />
 
                 <TextView
@@ -72,13 +74,14 @@
                     android:layout_height="match_parent"
                     android:layout_column="1"
                     android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/cabin_medium"
+                    android:gravity="center"
                     android:paddingLeft="100dp"
                     android:paddingRight="100dp"
-                    android:background="#FFFFFF"
-                    android:gravity="center"
                     android:text="@string/authorLabelText"
-                    android:fontFamily="@font/cabin_medium"
                     android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#09349D"
                     android:textStyle="bold" />
 
                 <TextView
@@ -87,13 +90,14 @@
                     android:layout_height="match_parent"
                     android:layout_column="2"
                     android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/cabin_medium"
+                    android:gravity="center"
                     android:paddingLeft="100dp"
                     android:paddingRight="100dp"
-                    android:background="#FFFFFF"
-                    android:gravity="center"
                     android:text="@string/isbnLabelText"
-                    android:fontFamily="@font/cabin_medium"
                     android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#09349D"
                     android:textStyle="bold" />
             </TableRow>
 
