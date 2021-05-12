@@ -1,6 +1,6 @@
 package com.example.appsforgood;
 
-import androidx.appcompat.app.AppCompatActivity;
+import  androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,29 +32,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-
-        myRef.setValue("Hello, World!");
-
-        // Read from the database
-        /**myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                Log.d("MainActivity", "Value is: " + value);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w("MainActivity", "Failed to read value.", error.toException());
-            }
-        });**/
-        setUpHyperLink();
     }
 
     /**
@@ -63,23 +40,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        readBookData();
+        //readBookDataFirebase();
 
         final Manager aManager = (Manager) getApplicationContext();
 
-        /**FirebaseDatabase database = FirebaseDatabase.getInstance();
+        /* FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference entry = database.getReference("books");
 
         for(int a = 0; a < aManager.getBooks().size(); a++) {
             entry.push().setValue(aManager.getBooks().get(a));
-        }**/
+        } */
     }
-
-    private void setUpHyperLink() {
-        TextView linkTextView = findViewById(R.id.feedbackButton);
-        linkTextView.setMovementMethod(LinkMovementMethod.getInstance());
-    }
-
 
     /**
      * Extracts the year of a book from a full mm/dd/yyyy date
@@ -95,10 +66,34 @@ public class MainActivity extends AppCompatActivity {
         return year;
     }
 
+    private void readBookDataFirebase () {
+        final Manager manager = (Manager) getApplicationContext();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("books");
+        // Read from the database
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Book current = ds.getValue(Book.class);
+                    manager.addBook(current);
+                    //Log.e("FirebaseActivity", "Title: " + current.getTitle() + "Length: " + current.getNumPages());
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("MainActivity", "Failed to read value.", error.toException());
+            }
+        });
+    }
     /**
      * Reads data from .csv file
      */
-    private void readBookData() {
+    private void readBookDataFile() {
         InputStream stream = getResources().openRawResource(R.raw.books);
         BufferedReader provider = new BufferedReader(new InputStreamReader(stream));
 
@@ -129,5 +124,4 @@ public class MainActivity extends AppCompatActivity {
         Intent start = new Intent(this, InitialSurvey.class);
         startActivity(start);
     }
-
 }

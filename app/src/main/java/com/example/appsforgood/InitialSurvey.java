@@ -208,19 +208,23 @@ public class InitialSurvey extends AppCompatActivity {
     public void langFilter() {
         //EditText langText = findViewById(R.id.langEditText);
         String lang = langText.getText().toString();
+        Log.d("LangRef", "" + lang);
         //Log.v("Lang", "User Language: " + lang);
-
-        for (Book b: Manager.getBooks()) {
-            //Log.v("Book", "All Book Titles: " + b.getTitle());
+        final Manager aManager = (Manager) getApplicationContext();
+        for (Book b: aManager.getBooks()) {
+            Log.v("Book", "All Book Languages: " + b.getLanguage());
+            //Log.v("LangDescriptor", "Language: " + b.getLanguage());
             if (b.getLanguage().equalsIgnoreCase(lang)) {
                 BookScores currentBook = new BookScores(b, 0.0);
+                //Log.v("Book", "Book Title: " + currentBook.getBook().getTitle());
                 correctLangBooks.add(currentBook);
+                //Log.d("LangBook", currentBook.getBook().getTitle());
                 //Log.v("Book", "Book w/ Correct Language: " + b.getTitle());
             }
         }
-        for (BookScores b: correctLangBooks) {
-            //Log.v("Book","Book in correctLangBooks" + b.getBook().getTitle());
-        }
+        /*for (BookScores b: correctLangBooks) {
+            Log.v("Book","Book in correctLangBooks" + b.getBook().getTitle());
+        } */
     }
 
     /**
@@ -425,6 +429,7 @@ public class InitialSurvey extends AppCompatActivity {
     }
 
     public void getHighest () {
+        Log.v("LengthCorrectLang", "" + correctLangBooks.size());
         double maxScore = correctLangBooks.get(0).getScore();
         //int i = 0;
         int correctIndex = 0;

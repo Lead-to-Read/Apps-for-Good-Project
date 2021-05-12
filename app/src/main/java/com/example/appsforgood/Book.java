@@ -131,7 +131,7 @@ public class Book {
         isbn13 = newIsbn13;
     }
 
-    public void setLanguageCode(String newLanguageCode) {
+    public void setLanguage(String newLanguageCode) {
         languageCode = newLanguageCode;
     }
 
