@@ -41,7 +41,6 @@
     <string name="authorLabelText">Author(s)</string>
     <string name="isbnLabelText">ISBN</string>
 
-    //activity_feedback.xml
-    <string name="feedbackPromptingText">Please do not hesitate to contact us by email (ENTER EMAIL ADDRESS). Or, feel free to share your concerns, suggestions, and feedback through the anonymous Google Form below.</string>
-    <string name="feedbackPageTitleText">Feedback</string>
+    //activity_no_lang.xml
+    <string name="noLangBookMessage">The language code you entered is not available. Please try again.</string>
 </resources>

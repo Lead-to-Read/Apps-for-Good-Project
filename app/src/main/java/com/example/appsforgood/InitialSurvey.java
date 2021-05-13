@@ -39,8 +39,6 @@ public class InitialSurvey extends AppCompatActivity {
     private String preferredPubTime;
     private int lowerPubYear;
     private int upperPubYear;
-
-
     ToggleButton saveDataToggleButton;
     EditText langText;
     EditText authorText;
@@ -231,7 +229,6 @@ public class InitialSurvey extends AppCompatActivity {
         publicationDateScore();
         ratingScore();
         popularityScore();
-        getHighest();
         if (saveDataToggleButton.isChecked()) {
             saveData(); }
         Intent start = new Intent(this, DisplayBooks.class);
@@ -479,30 +476,9 @@ public class InitialSurvey extends AppCompatActivity {
         //}
     }
 
-    public void getHighest () {
-        Log.v("LengthCorrectLang", "" + correctLangBooks.size());
-        double maxScore = correctLangBooks.get(0).getScore();
-        //int i = 0;
-        int correctIndex = 0;
-        for (int i = 0; i < correctLangBooks.size(); i++) {
-           if (correctLangBooks.get(i).getScore() > maxScore) {
-               maxScore = correctLangBooks.get(i).getScore();
-               correctIndex = i;
-           }
-        }
-        //Log.v("Highest Scoring Book","Index " + correctIndex); //~37
-        //Log.v("Highest Scoring Book", "Equals" + "correctLangBooks size:" + correctLangBooks.size() + "bookScores size: " + correctLangBooks.size()); //46 if eng is chosen
-        //Log.v("Highest Scoring Book", "Highest Scoring Book" + correctLangBooks.get(correctIndex).getBook().getTitle() + maxScore);
-    }
-
     public static ArrayList<BookScores> getCorrectLangBooks() {
         return correctLangBooks;
     }
-
-    //public static ArrayList<Double> getBookScores() {
-        //return bookScores;
-    //}
-
 }
 
 
