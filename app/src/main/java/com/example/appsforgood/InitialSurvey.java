@@ -176,7 +176,7 @@ public class InitialSurvey extends AppCompatActivity {
         mediumButton.setChecked(mediumLength);
         longButton.setChecked(longLength);
         lengthUserRanking.setProgress(lengthRating);
-        //pubDateRanking.setProgress(dateRating);
+        pubDateRanking.setProgress(dateRating);
         dateEarly1900sButton.setChecked(dateEarly1900s);
         dateLate1900sButton.setChecked(dateLate1900s);
         date2000sButton.setChecked(date2000s);
