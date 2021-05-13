@@ -119,7 +119,6 @@ public class InitialSurvey extends AppCompatActivity {
 
         TextView langCheckText = findViewById(R.id.langCheck);
 
-
         setUpHyperLink();
         loadData();
         updateViews();
@@ -127,9 +126,7 @@ public class InitialSurvey extends AppCompatActivity {
         langText.addTextChangedListener(new TextWatcher(){
             @Override
             public void afterTextChanged(Editable arg0) {
-
             }
-
             @Override
             public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
             }
@@ -141,8 +138,10 @@ public class InitialSurvey extends AppCompatActivity {
                     langCodes.add(b.getLanguage()); }
                     if (langCodes.contains(langText.getText().toString()) || langText.getText().toString().equals("en-US") || langText.getText().toString().equals("en-GB"))  {
                         langCheckText.setText("The language code you inputted is in the dataset.");
+                        langCheckText.setTextColor(Color.parseColor("#09349D"));
                     } else {
                         langCheckText.setText("The language code you inputted is not in the dataset.");
+                        langCheckText.setTextColor(Color.parseColor("#FFB00020"));
                 }
                 }
             });

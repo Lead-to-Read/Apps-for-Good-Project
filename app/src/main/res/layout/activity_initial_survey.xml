@@ -81,7 +81,10 @@
             <TextView
                 android:id="@+id/langCheck"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cabin"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/authorQuestion"
