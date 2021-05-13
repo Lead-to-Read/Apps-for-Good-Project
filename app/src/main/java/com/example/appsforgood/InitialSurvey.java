@@ -50,6 +50,7 @@ public class InitialSurvey extends AppCompatActivity {
     RadioButton shortButton;
     RadioButton mediumButton;
     RadioButton longButton;
+    RadioButton dateEarly1900sButton;
     RadioButton dateLate1900sButton;
     RadioButton date2000sButton;
 
@@ -62,7 +63,8 @@ public class InitialSurvey extends AppCompatActivity {
     public static final String MEDIUM_LENGTH = "mediumLength";
     public static final String LONG_LENGTH = "longLength";
     public static final String LENGTH_RATING = "lengthRating";
-    public static final String DATE_1900s = "date1900s";
+    public static final String DATE_EARLY_1900s = "dateEarly1900s";
+    public static final String DATE_LATE_1900s = "dateLate1900s";
     public static final String DATE_2000s = "date2000s";
     public static final String DATE_RATING = "dateRating";
     public static final String AVG_RATING = "avgRating";
@@ -79,7 +81,8 @@ public class InitialSurvey extends AppCompatActivity {
     private boolean longLength;
     private int lengthRating;
     //private String date;
-    private boolean date1900s;
+    private boolean dateEarly1900s;
+    private boolean dateLate1900s;
     private boolean date2000s;
     private int dateRating;
     private int avgRating;
@@ -108,6 +111,7 @@ public class InitialSurvey extends AppCompatActivity {
         shortButton = findViewById(R.id.shortLengthButton);
         mediumButton = findViewById(R.id.mediumLengthButton);
         longButton = findViewById(R.id.longLengthButton);
+        dateEarly1900sButton = findViewById(R.id.early1900sOption);
         dateLate1900sButton = findViewById(R.id.late1900sOption);
         date2000sButton = findViewById(R.id.modern2000sOption);
 
@@ -129,7 +133,8 @@ public class InitialSurvey extends AppCompatActivity {
         editor.putBoolean(MEDIUM_LENGTH, mediumButton.isChecked());
         editor.putBoolean(LONG_LENGTH, longButton.isChecked());
         editor.putInt(LENGTH_RATING, lengthUserRanking.getProgress());
-        editor.putBoolean(DATE_1900s, dateLate1900sButton.isChecked());
+        editor.putBoolean(DATE_EARLY_1900s, dateEarly1900sButton.isChecked());
+        editor.putBoolean(DATE_LATE_1900s, dateLate1900sButton.isChecked());
         editor.putBoolean(DATE_2000s, date2000sButton.isChecked());
         editor.putInt(DATE_RATING, pubDateRanking.getProgress());
         editor.putInt(AVG_RATING, avgRatingUserRanking.getProgress());
@@ -154,7 +159,8 @@ public class InitialSurvey extends AppCompatActivity {
         longLength = sharedPreferences.getBoolean(LONG_LENGTH, false);
         lengthRating = sharedPreferences.getInt(LENGTH_RATING,0);
         //date = sharedPreferences.getString(DATE,"");
-        date1900s = sharedPreferences.getBoolean(DATE_1900s, false);
+        dateEarly1900s = sharedPreferences.getBoolean(DATE_EARLY_1900s, false);
+        dateLate1900s = sharedPreferences.getBoolean(DATE_LATE_1900s, false);
         date2000s = sharedPreferences.getBoolean(DATE_2000s, false);
         dateRating = sharedPreferences.getInt(DATE_RATING,0);
         avgRating = sharedPreferences.getInt(AVG_RATING,0);
@@ -171,7 +177,8 @@ public class InitialSurvey extends AppCompatActivity {
         longButton.setChecked(longLength);
         lengthUserRanking.setProgress(lengthRating);
         //pubDateRanking.setProgress(dateRating);
-        dateLate1900sButton.setChecked(date1900s);
+        dateEarly1900sButton.setChecked(dateEarly1900s);
+        dateLate1900sButton.setChecked(dateLate1900s);
         date2000sButton.setChecked(date2000s);
         avgRatingUserRanking.setProgress(avgRating);
         popRanking.setProgress(popularityRating);
@@ -264,43 +271,64 @@ public class InitialSurvey extends AppCompatActivity {
         }
     }
 
-    /**
+    /*
      * Sets the page bounds for a short book (when user clicks short button)
      * @param v used to set page bounds for short books
      */
-    public void shortLengthScore(View v) {
+    /*public void shortLengthScore(View v) {
         preferredLength = "Short";
         lowerPageBound = 0;
         upperPageBound = 200;
         Log.v("Check", "Length " + preferredLength + " " + lowerPageBound + " " + upperPageBound);
     }
-
+     */
     /**
      * Sets the page bounds for a medium book (when user clicks medium button)
      * @param v used to set page bounds for medium books
      */
-    public void mediumLengthScore(View v) {
+    /*public void mediumLengthScore(View v) {
         preferredLength = "Medium";
         lowerPageBound = 201;
         upperPageBound = 500;
         Log.v("Check", "Length " + preferredLength + " " + lowerPageBound + " " + upperPageBound);
     }
-
+*/
     /**
      * Sets the page bounds for a long book (when user clicks long button)
      * @param v used to set page bounds for long books
      */
-    public void longLengthScore(View v) {
+    /*public void longLengthScore(View v) {
         preferredLength = "Long";
         lowerPageBound = 501;
         upperPageBound = 100000;// Safe upper bound for largest book
         Log.v("Check", "Length " + preferredLength + " " + lowerPageBound + " " + upperPageBound);
-    }
+    } */
 
     /**
      * Assigns a rating to each book based on its length using the preferences specified by the user in the initial survey
      */
     public void lengthScore() {
+        if (shortLength) {
+            preferredLength = "Short";
+            lowerPageBound = 0;
+            upperPageBound = 200;
+            Log.v("Check", "Length " + preferredLength + " " + lowerPageBound + " " + upperPageBound);
+        }
+
+        else if (mediumLength) {
+            preferredLength = "Medium";
+            lowerPageBound = 201;
+            upperPageBound = 500;
+            Log.v("Check", "Length " + preferredLength + " " + lowerPageBound + " " + upperPageBound);
+        }
+
+        else if (longLength) {
+            preferredLength = "Long";
+            lowerPageBound = 501;
+            upperPageBound = 100000;// Safe upper bound for largest book
+            Log.v("Check", "Length " + preferredLength + " " + lowerPageBound + " " + upperPageBound);
+        }
+
         //Log.v("Check", "Length Books " + correctLangBooks.size());
         for (int index = 0; index < correctLangBooks.size(); index++) {
             int currentPageLength = correctLangBooks.get(index).getBook().getNumPages();
@@ -331,62 +359,51 @@ public class InitialSurvey extends AppCompatActivity {
         //Log.v("Check", "LengthR");
 	}
 
-        public void early1900sScore(View v) {
+	/**
+     * Assigns a rating to each book based on its length using the preferences specified by the user in the initial survey
+     */
+    public void publicationDateScore() {
+        if (dateEarly1900s) {
             preferredPubTime = "early 1900s";
             lowerPubYear = 1900;
-            upperPubYear = 1950;
-            //Log.v("PubCheck", "Publication Time " + preferredPubTime);
+            upperPubYear = 1949;
         }
-
-        public void late1900sScore(View v) {
+        if (dateLate1900s) {
             preferredPubTime = "late 1900s";
-            lowerPubYear = 1951;
-            upperPubYear = 2000;
-            //Log.v("PubCheck", "Publication Time " + preferredPubTime);
+            lowerPubYear = 1950;
+            upperPubYear = 1999;
         }
-
-        /**
-         * Sets the page bounds for a medium book (when user clicks medium button)
-         * @param v used to set page bounds for medium books
-         */
-        public void modern2000sScore(View v) {
+        if (date2000s) {
             preferredPubTime = "2000s";
-            lowerPubYear = 2001;
-            upperPubYear = 3000; //Safe upper publication year bound
-            //Log.v("PubCheck", "Publication Time " + preferredPubTime);
+            lowerPubYear = 2000;
+            upperPubYear = 5000; // future year
         }
+        for (int index = 0; index < correctLangBooks.size(); index++) {
+            int currentPubYear = correctLangBooks.get(index).getBook().getYear();
+            //Log.v("PubCheck", "Publication of current book" + currentPubYear);
+            double subTimeRating = 0;
 
-
-        /**
-         * Assigns a rating to each book based on its length using the preferences specified by the user in the initial survey
-         */
-        public void publicationDateScore() {
-            for (int index = 0; index < correctLangBooks.size(); index++) {
-                int currentPubYear = correctLangBooks.get(index).getBook().getYear();
-                //Log.v("PubCheck", "Publication of current book" + currentPubYear);
-                double subTimeRating = 0;
-
-                if (lowerPubYear <= currentPubYear && currentPubYear <= upperPubYear) {
-                    subTimeRating = 1;
-                } else if (lowerPubYear - 5 <= currentPubYear && currentPubYear <= upperPubYear + 5) {
-                    subTimeRating = 0.75;
-                } else if (lowerPubYear - 10 <= currentPubYear && currentPubYear <= upperPubYear + 10) {
-                    subTimeRating = 0.5;
-                } else if (lowerPubYear - 15 <= currentPubYear && currentPubYear <= upperPubYear + 15) {
-                    subTimeRating = 0.25;
-                } else {
-                    subTimeRating = 0;
-                }
-                //Log.v("PubCheck", "Subrating of current book" + correctLangBooks.get(index).getBook().getTitle() + subTimeRating);
-                //ProgressBar pubDateRanking = findViewById(R.id.publicationDateRankingSlider);
-                int pubDateUserRanking = pubDateRanking.getProgress();
-                double pubRanking = (subTimeRating * pubDateUserRanking);
-                //Log.v("PubCheck", "Final pub rating of current book" + correctLangBooks.get(index).getBook().getTitle() + pubRanking);
-                double currentTotalRating = correctLangBooks.get(index).getScore();
-                correctLangBooks.get(index).setScore(currentTotalRating + pubRanking);
-                //Log.v("PubCheck", "Final rating of current book" + correctLangBooks.get(index).getScore());
+            if (lowerPubYear <= currentPubYear && currentPubYear <= upperPubYear) {
+                subTimeRating = 1;
+            } else if (lowerPubYear - 5 <= currentPubYear && currentPubYear <= upperPubYear + 5) {
+                subTimeRating = 0.75;
+            } else if (lowerPubYear - 10 <= currentPubYear && currentPubYear <= upperPubYear + 10) {
+                subTimeRating = 0.5;
+            } else if (lowerPubYear - 15 <= currentPubYear && currentPubYear <= upperPubYear + 15) {
+                subTimeRating = 0.25;
+            } else {
+                subTimeRating = 0;
             }
+            //Log.v("PubCheck", "Subrating of current book" + correctLangBooks.get(index).getBook().getTitle() + subTimeRating);
+            //ProgressBar pubDateRanking = findViewById(R.id.publicationDateRankingSlider);
+            int pubDateUserRanking = pubDateRanking.getProgress();
+            double pubRanking = (subTimeRating * pubDateUserRanking);
+            //Log.v("PubCheck", "Final pub rating of current book" + correctLangBooks.get(index).getBook().getTitle() + pubRanking);
+            double currentTotalRating = correctLangBooks.get(index).getScore();
+            correctLangBooks.get(index).setScore(currentTotalRating + pubRanking);
+            //Log.v("PubCheck", "Final rating of current book" + correctLangBooks.get(index).getScore());
         }
+    }
 
     /**
      * Assigns a rating to each book based on the average rating of each book/the importance entered by the user

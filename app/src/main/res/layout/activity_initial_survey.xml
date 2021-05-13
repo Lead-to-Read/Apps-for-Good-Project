@@ -141,7 +141,6 @@
                     android:layout_height="wrap_content"
                     android:buttonTint="#30A5FF"
                     android:fontFamily="@font/cabin"
-                    android:onClick="shortLengthScore"
                     android:text="@string/shortLengthOptionText"
                     android:textSize="18sp" />
 
@@ -151,7 +150,6 @@
                     android:layout_height="wrap_content"
                     android:buttonTint="#30A5FF"
                     android:fontFamily="@font/cabin"
-                    android:onClick="mediumLengthScore"
                     android:text="@string/mediumLengthOptionText"
                     android:textSize="18sp" />
 
@@ -161,7 +159,6 @@
                     android:layout_height="wrap_content"
                     android:buttonTint="#30A5FF"
                     android:fontFamily="@font/cabin"
-                    android:onClick="longLengthScore"
                     android:text="@string/longLengthOptionText"
                     android:textSize="18sp" />
             </RadioGroup>
@@ -208,7 +205,6 @@
                     android:layout_height="wrap_content"
                     android:buttonTint="#30A5FF"
                     android:fontFamily="@font/cabin"
-                    android:onClick="early1900sScore"
                     android:text="@string/early1900sOptionText"
                     android:textSize="18sp" />
 
@@ -218,7 +214,6 @@
                     android:layout_height="wrap_content"
                     android:buttonTint="#30A5FF"
                     android:fontFamily="@font/cabin"
-                    android:onClick="late1900sScore"
                     android:text="@string/late1900sOptionText"
                     android:textSize="18sp" />
 
@@ -228,7 +223,6 @@
                     android:layout_height="wrap_content"
                     android:buttonTint="#30A5FF"
                     android:fontFamily="@font/cabin"
-                    android:onClick="modern2000sScore"
                     android:text="@string/modern2000sOptionText"
                     android:textSize="18sp" />
             </RadioGroup>

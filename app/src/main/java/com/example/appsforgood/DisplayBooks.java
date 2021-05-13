@@ -32,6 +32,8 @@ public class  DisplayBooks extends AppCompatActivity {
         TextView isbn1 = (TextView) findViewById(R.id.suggestion1ISBN);
         isbn1.setText((InitialSurvey.getCorrectLangBooks()).get(0).getBook().getISBN13());
 
+        Log.v("Testing Ranking", "First Score: " + InitialSurvey.getCorrectLangBooks().get(0).getScore());
+
         TextView title2 = (TextView) findViewById(R.id.suggestion2Title);
         title2.setText((InitialSurvey.getCorrectLangBooks()).get(1).getBook().getTitle());
 
@@ -40,6 +42,8 @@ public class  DisplayBooks extends AppCompatActivity {
 
         TextView isbn2 = (TextView) findViewById(R.id.suggestion2ISBN);
         isbn2.setText((InitialSurvey.getCorrectLangBooks()).get(1).getBook().getISBN13());
+
+        Log.v("Testing Ranking", "Second Score: " + InitialSurvey.getCorrectLangBooks().get(1).getScore());
 
         TextView title3 = (TextView) findViewById(R.id.suggestion3Title);
         title3.setText((InitialSurvey.getCorrectLangBooks()).get(2).getBook().getTitle());
@@ -50,6 +54,8 @@ public class  DisplayBooks extends AppCompatActivity {
         TextView isbn3 = (TextView) findViewById(R.id.suggestion3ISBN);
         isbn3.setText((InitialSurvey.getCorrectLangBooks()).get(2).getBook().getISBN13());
 
+        Log.v("Testing Ranking", "Third Score: " + InitialSurvey.getCorrectLangBooks().get(2).getScore());
+
         TextView title4 = (TextView) findViewById(R.id.suggestion4Title);
         title4.setText((InitialSurvey.getCorrectLangBooks()).get(3).getBook().getTitle());
 
@@ -58,6 +64,8 @@ public class  DisplayBooks extends AppCompatActivity {
 
         TextView isbn4 = (TextView) findViewById(R.id.suggestion4ISBN);
         isbn4.setText((InitialSurvey.getCorrectLangBooks()).get(3).getBook().getISBN13());
+
+        Log.v("Testing Ranking", "Fourth Score: " + InitialSurvey.getCorrectLangBooks().get(3).getScore());
 
         TextView title5 = (TextView) findViewById(R.id.suggestion5Title);
         title5.setText((InitialSurvey.getCorrectLangBooks()).get(4).getBook().getTitle());
@@ -68,6 +76,7 @@ public class  DisplayBooks extends AppCompatActivity {
         TextView isbn5 = (TextView) findViewById(R.id.suggestion5ISBN);
         isbn5.setText((InitialSurvey.getCorrectLangBooks()).get(4).getBook().getISBN13());
 
+        Log.v("Testing Ranking", "Fifth Score: " + InitialSurvey.getCorrectLangBooks().get(4).getScore());
     }
 
     public Book getHighest (ArrayList<BookScores> initCorrectLangBooks) {
