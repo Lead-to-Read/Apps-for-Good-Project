@@ -452,22 +452,6 @@ public class InitialSurvey extends AppCompatActivity {
         //}
     }
 
-    /*public void getHighest () {
-        Log.v("LengthCorrectLang", "" + correctLangBooks.size());
-        double maxScore = correctLangBooks.get(0).getScore();
-        //int i = 0;
-        int correctIndex = 0;
-        for (int i = 0; i < correctLangBooks.size(); i++) {
-           if (correctLangBooks.get(i).getScore() > maxScore) {
-               maxScore = correctLangBooks.get(i).getScore();
-               correctIndex = i;
-           }
-        }
-        //Log.v("Highest Scoring Book","Index " + correctIndex); //~37
-        //Log.v("Highest Scoring Book", "Equals" + "correctLangBooks size:" + correctLangBooks.size() + "bookScores size: " + correctLangBooks.size()); //46 if eng is chosen
-        //Log.v("Highest Scoring Book", "Highest Scoring Book" + correctLangBooks.get(correctIndex).getBook().getTitle() + maxScore);
-    } */
-
     public static ArrayList<BookScores> getCorrectLangBooks() {
         return correctLangBooks;
     }
