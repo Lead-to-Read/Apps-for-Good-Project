@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.CalendarContract;
+import android.text.Editable;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -22,6 +23,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+import android.text.TextWatcher;
 
 import java.util.ArrayList;
 
@@ -115,10 +117,35 @@ public class InitialSurvey extends AppCompatActivity {
         dateLate1900sButton = findViewById(R.id.late1900sOption);
         date2000sButton = findViewById(R.id.modern2000sOption);
 
+        TextView langCheckText = findViewById(R.id.langCheck);
+
 
         setUpHyperLink();
         loadData();
         updateViews();
+
+        langText.addTextChangedListener(new TextWatcher(){
+            @Override
+            public void afterTextChanged(Editable arg0) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+            }
+            @Override
+            public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+                ArrayList<String> langCodes = new ArrayList<String>();
+                final Manager aManager = (Manager) getApplicationContext();
+                for (Book b: aManager.getBooks()) {
+                    langCodes.add(b.getLanguage()); }
+                    if (langCodes.contains(langText.getText().toString()) || langText.getText().toString().equals("en-US") || langText.getText().toString().equals("en-GB"))  {
+                        langCheckText.setText("The language code you inputted is in the dataset.");
+                    } else {
+                        langCheckText.setText("The language code you inputted is not in the dataset.");
+                }
+                }
+            });
     }
 
     //If saveData is checked and continue is clicked...
