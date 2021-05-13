@@ -1,7 +1,5 @@
 package com.example.appsforgood;
 
-import java.util.ArrayList;
-
 public class BookScores {
 
     private Book book;

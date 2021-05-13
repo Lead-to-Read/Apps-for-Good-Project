@@ -216,7 +216,7 @@ public class InitialSurvey extends AppCompatActivity {
         //Log.v("Lang", "User Language: " + lang);
         final Manager aManager = (Manager) getApplicationContext();
         for (Book b: aManager.getBooks()) {
-            Log.v("Book", "All Book Languages: " + b.getLanguage());
+            //Log.v("Book", "All Book Languages: " + b.getLanguage());
             //Log.v("LangDescriptor", "Language: " + b.getLanguage());
             if (b.getLanguage().equalsIgnoreCase(lang)) {
                 BookScores currentBook = new BookScores(b, 0.0);
@@ -235,6 +235,7 @@ public class InitialSurvey extends AppCompatActivity {
      * Assigns a rating based on the author of each book and the author/importance entered by the user
      */
     public void authorScore() {
+        Log.v("Size", "" + correctLangBooks.size());
         //EditText authorText = findViewById(R.id.authorEditText);
         String userAuthor = authorText.getText().toString();
         //Log.v("Author", "Preferred author: " + userAuthor);
@@ -251,7 +252,7 @@ public class InitialSurvey extends AppCompatActivity {
             } else {
                 authorSubRating = 0;
             }
-            //Log.v("Author", "Subrating: " + authorSubRating);
+            Log.v("Author", "Title: " + b.getBook().getTitle() + "Subrating: " + authorSubRating);
 
             //Get user author rating from slider and multiply by authorSubRating
             //ProgressBar authorUserRanking = findViewById(R.id.authorRankingSlider);
@@ -271,7 +272,7 @@ public class InitialSurvey extends AppCompatActivity {
         preferredLength = "Short";
         lowerPageBound = 0;
         upperPageBound = 200;
-        //Log.v("Check", "Length " + preferredLength);
+        Log.v("Check", "Length " + preferredLength + " " + lowerPageBound + " " + upperPageBound);
     }
 
     /**
@@ -282,7 +283,7 @@ public class InitialSurvey extends AppCompatActivity {
         preferredLength = "Medium";
         lowerPageBound = 201;
         upperPageBound = 500;
-        //Log.v("Check", "Length " + preferredLength);
+        Log.v("Check", "Length " + preferredLength + " " + lowerPageBound + " " + upperPageBound);
     }
 
     /**
@@ -293,7 +294,7 @@ public class InitialSurvey extends AppCompatActivity {
         preferredLength = "Long";
         lowerPageBound = 501;
         upperPageBound = 100000;// Safe upper bound for largest book
-        //Log.v("Check", "Length " + preferredLength);
+        Log.v("Check", "Length " + preferredLength + " " + lowerPageBound + " " + upperPageBound);
     }
 
     /**
@@ -323,6 +324,9 @@ public class InitialSurvey extends AppCompatActivity {
             //Log.v("CheckA", "Length" + subLengthRating);
             double currentTotalRating = correctLangBooks.get(index).getScore();
             correctLangBooks.get(index).setScore(currentTotalRating + lengthRating);
+        }
+        for (BookScores b : correctLangBooks) {
+            Log.v("After Length", "Title: " + b.getBook().getTitle() + " Score: " + b.getScore() + " Pages: " + b.getBook().getNumPages() + lowerPageBound);
         }
         //Log.v("Check", "LengthR");
 	}
