@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -93,7 +95,9 @@ public class InitialSurvey extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_survey);
 
+
         //Log.v("SHAREDPREF","Initial Survey runs");
+        saveDataToggleButton = (ToggleButton) findViewById(R.id.saveDataToggle);
         langText = (EditText) findViewById(R.id.langEditText);
         authorText = findViewById(R.id.authorEditText);
         authorUserRanking = findViewById(R.id.authorRankingSlider);
@@ -106,7 +110,7 @@ public class InitialSurvey extends AppCompatActivity {
         longButton = findViewById(R.id.longLengthButton);
         dateLate1900sButton = findViewById(R.id.late1900sOption);
         date2000sButton = findViewById(R.id.modern2000sOption);
-        saveDataToggleButton = findViewById(R.id.saveDataToggle);
+
 
         setUpHyperLink();
         loadData();

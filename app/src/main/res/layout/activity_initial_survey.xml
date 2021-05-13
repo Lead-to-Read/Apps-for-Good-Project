@@ -16,6 +16,7 @@
     tools:context=".InitialSurvey">
 
 
+
     <ScrollView
         android:id="@+id/scrollDown"
         android:layout_width="match_parent"
@@ -51,7 +52,7 @@
                 android:fontFamily="@font/cabin_medium"
                 android:text="@string/initialSurveyTitleText"
                 android:textColor="#09349D"
-                android:textSize="30sp"
+                android:textSize="40sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -62,7 +63,8 @@
                 android:paddingTop="10sp"
                 android:text="@string/langQText"
                 android:textColor="#09349D"
-                android:textSize="14sp" />
+                android:textColorLink="#30A5FF"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/langEditText"
@@ -74,7 +76,7 @@
                 android:hint="@string/langOptionsText"
                 android:inputType="textPersonName"
                 android:singleLine="true"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/authorQuestion"
@@ -84,7 +86,7 @@
                 android:paddingTop="10sp"
                 android:text="@string/authorQText"
                 android:textColor="#09349D"
-                android:textSize="14sp" />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/authorEditText"
@@ -95,7 +97,7 @@
                 android:fontFamily="@font/cabin"
                 android:hint="@string/authorHintText"
                 android:inputType="textPersonName"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/authorRankingQuestion"
@@ -105,15 +107,18 @@
                 android:paddingTop="10sp"
                 android:text="@string/authorRankingText"
                 android:textColor="#09349D"
-                android:textSize="14sp" />
+                android:textSize="20sp" />
 
             <SeekBar
                 android:id="@+id/authorRankingSlider"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="33dp"
                 android:max="10"
-                android:progress="0" />
+                android:progress="0"
+                android:progressTint="#30A5FF"
+                android:scaleY="2"
+                android:thumbTint="#30A5FF" />
 
             <TextView
                 android:id="@+id/bookLengthQuestion"
@@ -123,7 +128,7 @@
                 android:paddingTop="10sp"
                 android:text="@string/lengthQText"
                 android:textColor="#09349D"
-                android:textSize="14sp" />
+                android:textSize="20sp" />
 
             <RadioGroup
                 android:id="@+id/lengthButtons"
@@ -134,28 +139,31 @@
                     android:id="@+id/shortLengthButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:buttonTint="#30A5FF"
                     android:fontFamily="@font/cabin"
                     android:onClick="shortLengthScore"
                     android:text="@string/shortLengthOptionText"
-                    android:textSize="12sp" />
+                    android:textSize="18sp" />
 
                 <RadioButton
                     android:id="@+id/mediumLengthButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:buttonTint="#30A5FF"
                     android:fontFamily="@font/cabin"
                     android:onClick="mediumLengthScore"
                     android:text="@string/mediumLengthOptionText"
-                    android:textSize="12sp" />
+                    android:textSize="18sp" />
 
                 <RadioButton
                     android:id="@+id/longLengthButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:buttonTint="#30A5FF"
                     android:fontFamily="@font/cabin"
                     android:onClick="longLengthScore"
                     android:text="@string/longLengthOptionText"
-                    android:textSize="12sp" />
+                    android:textSize="18sp" />
             </RadioGroup>
 
             <TextView
@@ -166,15 +174,18 @@
                 android:paddingTop="10sp"
                 android:text="@string/lengthRankingText"
                 android:textColor="#09349D"
-                android:textSize="14sp" />
+                android:textSize="20sp" />
 
             <SeekBar
                 android:id="@+id/bookLengthRankingSlider"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="33dp"
                 android:max="10"
-                android:progress="0" />
+                android:progress="0"
+                android:progressTint="#30A5FF"
+                android:scaleY="2"
+                android:thumbTint="#30A5FF" />
 
             <TextView
                 android:id="@+id/publicationDateQuestion"
@@ -184,7 +195,7 @@
                 android:paddingTop="10sp"
                 android:text="@string/dateQText"
                 android:textColor="#09349D"
-                android:textSize="14sp" />
+                android:textSize="20sp" />
 
             <RadioGroup
                 android:id="@+id/publicationDateButtons"
@@ -195,28 +206,31 @@
                     android:id="@+id/early1900sOption"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:buttonTint="#30A5FF"
                     android:fontFamily="@font/cabin"
                     android:onClick="early1900sScore"
                     android:text="@string/early1900sOptionText"
-                    android:textSize="12sp" />
+                    android:textSize="18sp" />
 
                 <RadioButton
                     android:id="@+id/late1900sOption"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:buttonTint="#30A5FF"
                     android:fontFamily="@font/cabin"
                     android:onClick="late1900sScore"
                     android:text="@string/late1900sOptionText"
-                    android:textSize="12sp" />
+                    android:textSize="18sp" />
 
                 <RadioButton
                     android:id="@+id/modern2000sOption"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:buttonTint="#30A5FF"
                     android:fontFamily="@font/cabin"
                     android:onClick="modern2000sScore"
                     android:text="@string/modern2000sOptionText"
-                    android:textSize="12sp" />
+                    android:textSize="18sp" />
             </RadioGroup>
 
             <TextView
@@ -227,15 +241,18 @@
                 android:paddingTop="10sp"
                 android:text="@string/dateRankingText"
                 android:textColor="#09349D"
-                android:textSize="14sp" />
+                android:textSize="20sp" />
 
             <SeekBar
                 android:id="@+id/publicationDateRankingSlider"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="37dp"
                 android:max="10"
-                android:progress="0" />
+                android:progress="0"
+                android:progressTint="#30A5FF"
+                android:scaleY="2"
+                android:thumbTint="#30A5FF" />
 
             <TextView
                 android:id="@+id/avgRatingRankingQuestion"
@@ -245,15 +262,18 @@
                 android:paddingTop="10sp"
                 android:text="@string/avgRatingRankingText"
                 android:textColor="#09349D"
-                android:textSize="14sp" />
+                android:textSize="20sp" />
 
             <SeekBar
                 android:id="@+id/avgRatingRankingSlider"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="36dp"
                 android:max="10"
-                android:progress="0" />
+                android:progress="0"
+                android:progressTint="#30A5FF"
+                android:scaleY="2"
+                android:thumbTint="#30A5FF" />
 
             <TextView
                 android:id="@+id/popularityRankingQuestion"
@@ -262,15 +282,18 @@
                 android:fontFamily="@font/cabin_medium"
                 android:text="@string/popularityRankingText"
                 android:textColor="#09349D"
-                android:textSize="14sp" />
+                android:textSize="20sp" />
 
             <SeekBar
                 android:id="@+id/popularityRankingSlider"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:max="10"
-                android:progress="0" />
+                android:progress="0"
+                android:progressTint="#30A5FF"
+                android:scaleY="2"
+                android:thumbTint="#30A5FF" />
 
             <TextView
                 android:id="@+id/saveDataToggleDescription"
@@ -281,7 +304,7 @@
                 android:fontFamily="@font/cabin_medium"
                 android:text="@string/saveDataToggleDescriptionText"
                 android:textColor="#09349D"
-                android:textSize="14sp" />
+                android:textSize="20sp" />
 
             <ToggleButton
                 android:id="@+id/saveDataToggle"

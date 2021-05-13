@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setUpHyperLink();
     }
 
     /**
@@ -123,5 +124,13 @@ public class MainActivity extends AppCompatActivity {
     public void performStartSuggestions(View v) {
         Intent start = new Intent(this, InitialSurvey.class);
         startActivity(start);
+    }
+
+    /**
+     * Sets up hyperlink for feedback button
+     */
+    private void setUpHyperLink() {
+        Button feedbackButton = findViewById(R.id.feedbackButton);
+        feedbackButton.setMovementMethod(LinkMovementMethod.getInstance());
     }
 }
