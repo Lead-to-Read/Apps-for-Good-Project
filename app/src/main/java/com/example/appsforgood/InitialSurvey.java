@@ -39,8 +39,6 @@ public class InitialSurvey extends AppCompatActivity {
     private String preferredPubTime;
     private int lowerPubYear;
     private int upperPubYear;
-
-
     ToggleButton saveDataToggleButton;
     EditText langText;
     EditText authorText;
