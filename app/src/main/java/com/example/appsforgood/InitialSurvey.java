@@ -51,7 +51,6 @@ public class InitialSurvey extends AppCompatActivity {
 
     //String name of the keys for the variables being saved from the activity_initial_survey.xml.
     public static final String SHARED_PREFERENCES= "sharedPreferences";
-    //public static final String LANG_CODE= "langCode";
     public static final String AUTHOR = "favAuthor";
     public static final String AUTHOR_RATING = "authorRating";
     public static final String SHORT_LENGTH = "shortLength";
@@ -67,7 +66,6 @@ public class InitialSurvey extends AppCompatActivity {
     public static final String SAVE_DATA_TOGGLE = "saveDataToggle";
 
     //Variables storing the user's input into the activity_initial_survey.xml.
-    //private String langCode;
     private String author;
     private int authorRating;
     private boolean shortLength;
