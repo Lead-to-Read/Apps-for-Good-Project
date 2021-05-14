@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class Manager extends Application {
 
     //Instance Variables
-    final ArrayList<Book> books = new ArrayList<>();
+    private ArrayList<Book> books = new ArrayList<>();
 
     public void onCreate() {
         super.onCreate();
