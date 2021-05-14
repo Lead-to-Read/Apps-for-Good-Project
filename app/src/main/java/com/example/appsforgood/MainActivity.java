@@ -5,23 +5,12 @@ import  androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Button;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-
+/**
+ * This class is responsible for displaying the activity_main.xml and the corresponding buttons.
+ */
 public class MainActivity extends AppCompatActivity {
 
     /**
@@ -41,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        //readBookDataFirebase();
 
-        final Manager aManager = (Manager) getApplicationContext();
+        //final Manager aManager = (Manager) getApplicationContext();
 
+        //Populates Firebase
         /* FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference entry = database.getReference("books");
 
@@ -53,48 +42,24 @@ public class MainActivity extends AppCompatActivity {
         } */
     }
 
-    /**
+    /*/**
      * Extracts the year of a book from a full mm/dd/yyyy date
      * @param start the string containing the month, date, and year
      * @return the year of publication of the book
      */
-    private int fixYear(String start) {
+    /*private int fixYear(String start) {
         int endMonth = start.indexOf("/");
         String middle = start.substring(endMonth + 1);
         int endDay = middle.indexOf("/");
         String yearString = middle.substring(endDay + 1, endDay + 5);
         int year = Integer.parseInt(yearString);
         return year;
-    }
+    }*/
 
-    private void readBookDataFirebase () {
-        final Manager manager = (Manager) getApplicationContext();
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("books");
-        // Read from the database
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                    Book current = ds.getValue(Book.class);
-                    manager.addBook(current);
-                    //Log.e("FirebaseActivity", "Title: " + current.getTitle() + "Length: " + current.getNumPages());
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w("MainActivity", "Failed to read value.", error.toException());
-            }
-        });
-    }
-    /**
-     * Reads data from .csv file
+    /*/**
+     * Reads data from .csv file, but now updated to Firebase and no longer used
      */
-    private void readBookDataFile() {
+    /*private void readBookDataFile() {
         InputStream stream = getResources().openRawResource(R.raw.books);
         BufferedReader provider = new BufferedReader(new InputStreamReader(stream));
 
@@ -105,17 +70,14 @@ public class MainActivity extends AppCompatActivity {
             while ((entry = provider.readLine()) != null) {
                 // Split by ',' (CSV file)
                 String[] attributes = entry.split(",");
-                //Log.v("Reading", attributes[1] + " " + attributes[2]);
                 Book current = new Book(attributes[1], attributes[2], Double.parseDouble(attributes[3]), attributes[5], attributes[6], Integer.parseInt(attributes[7]), Integer.parseInt(attributes[8]), fixYear(attributes[10])); // all necessary factors
                 manager.addBook(current);
             }
-
         }
         catch(IOException exception) {
             Log.wtf("Reading", "Error while reading data - line " + entry);
-
         }
-    }
+    }*/
 
     /**
      * Starts suggestion process
