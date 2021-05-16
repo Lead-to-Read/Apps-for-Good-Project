@@ -107,4 +107,13 @@ public class DisplayBooks extends AppCompatActivity {
         }
     }
 
+    /**
+     * Called when the back button is pressed and clears correctLangBooks to avoid duplicate suggestions
+     */
+    @Override
+    public void onBackPressed () {
+        super.onBackPressed();
+        InitialSurvey.clearCorrectLangBooks();
+    }
+
 }

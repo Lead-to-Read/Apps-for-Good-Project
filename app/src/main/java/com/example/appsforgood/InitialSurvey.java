@@ -460,6 +460,13 @@ public class InitialSurvey extends AppCompatActivity {
     public static ArrayList<BookScores> getCorrectLangBooks() {
         return correctLangBooks;
     }
+
+    /**
+     * Clears the correctLangBooks ArrayList
+     */
+    public static void clearCorrectLangBooks () {
+        correctLangBooks.clear();
+    }
 }
 
 
