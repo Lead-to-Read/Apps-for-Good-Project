@@ -51,6 +51,7 @@ public class InitialSurvey extends AppCompatActivity {
 
     //String name of the keys for the variables being saved from the activity_initial_survey.xml.
     public static final String SHARED_PREFERENCES= "sharedPreferences";
+    public static final String LANG_CODE = "lang";
     public static final String AUTHOR = "favAuthor";
     public static final String AUTHOR_RATING = "authorRating";
     public static final String SHORT_LENGTH = "shortLength";
@@ -67,6 +68,7 @@ public class InitialSurvey extends AppCompatActivity {
 
     //Variables storing the user's input into the activity_initial_survey.xml.
     private String author;
+    private String langCode;
     private int authorRating;
     private boolean shortLength;
     private boolean mediumLength;
@@ -153,7 +155,7 @@ public class InitialSurvey extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        //editor.putString(LANG_CODE, langText.getText().toString());
+        editor.putString(LANG_CODE, langText.getText().toString());
         editor.putString(AUTHOR, authorText.getText().toString());
         editor.putInt(AUTHOR_RATING, authorUserRanking.getProgress());
         editor.putBoolean(SHORT_LENGTH, shortButton.isChecked());
@@ -177,7 +179,7 @@ public class InitialSurvey extends AppCompatActivity {
     public void loadData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
 
-        //langCode = sharedPreferences.getString(LANG_CODE,"");
+        langCode = sharedPreferences.getString(LANG_CODE,"");
         author = sharedPreferences.getString(AUTHOR,"");
         authorRating = sharedPreferences.getInt(AUTHOR_RATING,0);
         shortLength = sharedPreferences.getBoolean(SHORT_LENGTH, false);
@@ -197,7 +199,7 @@ public class InitialSurvey extends AppCompatActivity {
      * Updates and fills in the initial survey based on the data saved locally from when the user filled out the survey previously
      */
     public void updateViews() {
-        //langText.setText(langCode);
+        langText.setText(langCode);
         authorText.setText(author);
         authorUserRanking.setProgress(authorRating);
         shortButton.setChecked(shortLength);
