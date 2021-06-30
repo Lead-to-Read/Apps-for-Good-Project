@@ -1,4 +1,4 @@
-package com.example.appsforgood;
+package com.nextread.appsforgood;
 
 /**
  * This class stores each Book object with its associated score to identify the five highest-rated books.

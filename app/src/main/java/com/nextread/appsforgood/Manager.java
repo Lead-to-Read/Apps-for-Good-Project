@@ -1,4 +1,4 @@
-package com.example.appsforgood;
+package com.nextread.appsforgood;
 
 import android.app.Application;
 import android.util.Log;

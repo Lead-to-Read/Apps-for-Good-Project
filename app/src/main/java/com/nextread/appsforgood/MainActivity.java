@@ -1,4 +1,4 @@
-package com.example.appsforgood;
+package com.nextread.appsforgood;
 
 import  androidx.appcompat.app.AppCompatActivity;
 

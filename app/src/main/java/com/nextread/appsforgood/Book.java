@@ -1,4 +1,4 @@
- package com.example.appsforgood;
+ package com.nextread.appsforgood;
 
  /**
   * This class stores Book objects and its associated data.
